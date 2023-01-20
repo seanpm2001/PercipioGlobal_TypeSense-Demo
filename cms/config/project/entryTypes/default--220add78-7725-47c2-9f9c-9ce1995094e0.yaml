@@ -1,0 +1,175 @@
+fieldLayouts:
+  3eeeff9f-734f-45a2-b25e-67ee2a523ec8:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 022bd558-ee1d-40e7-b1a5-058107a8c930
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3109aa29-5965-4a8f-8d8b-916007356169 # URN
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4d7995c4-1f9c-44ae-b955-ca32b67047ca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bc63ab8a-a458-41b6-9ae2-b8dcda04fb2d # School Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6f22c2ab-b540-451b-ae52-6311a6261ee0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 541cd7d3-f3f7-4a7f-99ba-916f38f123e8 # Street
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e47ffcc-0af2-4f29-a4c2-35f10fd199dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 07b24f6a-8c54-4b75-9f3d-33e14b617f29 # Town
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8340187-6b8e-41d6-b4f9-78e2e5ef5179
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ab485563-3b1a-4aba-8573-e3eea22285b4 # Locality
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b97ce8f8-d4f4-420a-9667-776e4fb2e4a1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 31819c19-99f9-4cbc-b590-58f203b9ecb7 # County
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 772fcccd-2a84-41a8-a3d4-6a06a9447061
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8677e73c-02aa-48e3-acb5-88ea1d7af642 # Region
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a05b8557-9f55-4875-89f4-bc96a6763cf6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f4064c2f-64fc-4f44-977f-b2c0472c20f8 # Local Authority
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c7562313-b864-47fe-a7fa-6a8ff94a6e78
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3059e0cb-5dba-4c56-99c0-4f41f4f99367 # Local Authority Slug
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 42fbeafe-35b4-4011-b274-314ff0d338d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0254cddf-9be9-4fe5-a19b-a139bc21fb5b # Nomenclature of Territorial Units for Statistics
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bd7dfdc7-dd22-4908-962a-b0fa94766c21
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ef486563-eb3e-4c52-8d61-94846d61e60c # Nomenclature of Territorial Units for Statistics Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3e701f5f-9392-4ae4-bb88-327f8799e73b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 39c541ef-d51c-4bad-b2b3-d2087f02a3ed
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: e2bcc52b-ab8d-46fd-b5bd-61297d3d7518 # Schools
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

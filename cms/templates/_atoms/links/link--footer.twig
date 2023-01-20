@@ -1,0 +1,42 @@
+{%- extends '_atoms/links/_link--props' -%}
+{%- import '_macros/functions' as parse -%}
+
+{#
+    ### PROPERTIES ###
+    ------------------
+
+    INHERITED FROM: `_atoms/links/link--props.twig`
+
+    ### FUNCTIONS ###
+    -----------------
+    ga: parse google analytics attributes
+#}
+
+{%- block link -%}
+
+    {%- set classes = {
+        '_default': 'inline-flex',
+        'font': 'font-primary text-base',
+    }-%}
+
+    {%- minify -%}
+
+        <a
+            {{ props.url ? 'href=' ~ props.url : '' }}
+            {{ parse.ga(props.ga) }}
+            aria-label="{{- props.text -}}"
+            class="{{ classes._default }} {{ classes.font }} {{ props.utilities }}"
+        >
+            <span class="sr-only">
+                Go to:
+            </span>
+
+            <span>
+                {{- props.text -}}
+            </span>
+
+        </a>
+
+    {%- endminify -%}
+
+{%- endblock -%}

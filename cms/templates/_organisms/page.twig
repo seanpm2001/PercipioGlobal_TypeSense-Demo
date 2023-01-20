@@ -1,0 +1,42 @@
+{% extends '_boilerplate/_layouts/generic-page-layout.twig' %}
+
+{#
+    ### COMPONENTS ###
+    ------------------
+
+    ## ORGANISMS
+
+    view--page-home: `_organisms/views/view--page-home`
+#}
+
+{% block headLinks %}
+    {{ parent() }}
+{% endblock headLinks %}
+
+{%- set component = '_organisms/views/view--page-home' -%}
+
+{% block content %}
+
+    {%- if entry ??? null %}
+
+        {%- switch entry.type -%}
+
+            {%- case 'news' -%}
+                {%- set component = '_organisms/views/view--detail-news' -%}
+
+        {%- endswitch -%}
+
+        {%- if component -%}
+            {%- include component ignore missing with {
+                content: entry,
+            } -%}
+        {%- endif -%}
+
+    {%- endif -%}
+
+{% endblock %}
+
+{# -- Any JavaScript that should be included before </body> -- #}
+{% block bodyJs %}
+    {{ parent() }}
+{% endblock bodyJs %}

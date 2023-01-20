@@ -1,0 +1,51 @@
+{%- extends '_atoms/buttons/_button--props' -%}
+{%- import '_macros/atoms' as render -%}
+{%- import '_macros/functions' as parse -%}
+
+{#
+    ### PROPERTIES ###
+    ------------------
+
+    INHERITED FROM: `_atoms/buttons/button--props.twig`
+#}
+
+{%- set classes = {
+    '_default': 'inline-flex text-center rounded-full',
+    'font': 'font-primary text-sm',
+}-%}
+
+{%- block button -%}
+
+    {%- minify -%}
+
+        <a
+            {{ props.url ? 'href=' ~ props.url : '' }}
+            data-tag-category="{{- props.ga.category ??? '' -}}"
+            data-tag-action="{{- props.ga.action ??? '' -}}"
+            data-tag-label="{{- props.ga.label ??? '' -}}"
+            {{ props.target ? 'target=' ~ props.target : '' }}
+            aria-label="{{- props.text -}}"
+            class="{{ classes._default }} {{ classes.font }} {{ props.utilities }}"
+        >
+            <span class="sr-only">
+                {{- props.target == '_self' ? 'Go to: ' : 'Go to external page: ' -}}
+            </span>
+
+            <span>
+                {{- props.text -}}
+            </span>
+
+            {%- if props.icon -%}
+
+                {{- render.atom('icon', 'fa', {
+                    icon: props.icon,
+                    size: "xs"
+                }) -}}
+
+            {%- endif -%}
+
+        </a>
+
+    {%- endminify -%}
+
+{%- endblock -%}

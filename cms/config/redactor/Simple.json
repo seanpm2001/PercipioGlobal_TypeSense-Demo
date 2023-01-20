@@ -1,0 +1,15 @@
+{
+    "buttons": [
+        "bold",
+        "italic",
+        "sup",
+        "sub",
+        "link"
+    ],
+    "plugins": ["counter"],
+    "pastePlainText": true,
+    "pasteImages": false,
+    "spellcheck": true,
+    "structure": true,
+    "toolbarFixed": true
+}

@@ -1,0 +1,34 @@
+{%- extends '_molecules/content/_content--props' -%}
+{%- import '_macros/atoms' as render -%}
+
+{#
+    ### PROPERTIES ###
+    ------------------
+
+    INHERITED FROM: `_molecules/content/_content--props.twig`
+
+    ### COMPONENTS ###
+    ------------------
+
+    ## MOLECULES
+
+    text--standfirst: `_atoms/texts/text--standfirst.twig`
+#}
+
+{%- block copy -%}
+    {%- minify -%}
+
+        {%- set props = props|merge({
+            standfirst: props.content.standfirst ??? '',
+            alignment: props.content.alignment ??? ''
+        }) -%}
+
+        <div class="container max-w-screen-lg mx-auto {{ props.utilities -}}">
+            <div class="animate" data-animation="slideBottomToTop">
+                {{- render.atom('text', 'standfirst', {
+                    content: props.standfirst
+                }) -}}
+            </div>
+        </div>
+    {%- endminify -%}
+{%- endblock -%}

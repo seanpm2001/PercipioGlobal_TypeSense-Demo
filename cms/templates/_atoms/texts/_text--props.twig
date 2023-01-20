@@ -1,0 +1,17 @@
+{#
+    ### PROPERTIES ###
+    ------------------
+
+    alignment: (STR) -- the text alignment
+    color: (STR) -- the color of the text
+    content: (STR) -- the actual content as a string
+    utilities: (STR) -- the specific TW spacing utilities to add
+#}
+
+{%- set props = {
+    content: options.content ??? null,
+    utilities: options.utilities ?? null,
+} -%}
+
+{%- block text -%}
+{%- endblock -%}

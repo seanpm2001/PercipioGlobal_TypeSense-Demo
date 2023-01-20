@@ -1,0 +1,102 @@
+{%- do craft.eagerBeaver.eagerLoadElements(entry,
+    [
+        'contentBuilder',
+        'contentBuilder.highlightCards:cards',
+        'contentBuilder.highlightCards:cards.teaserImage',
+        'contentBuilder.galleryImages:images',
+        'contentBuilder.media',
+        'contentBuilder.form:form',
+        'contentBuilder.media:embed',
+        'contentBuilder.singleImage:image',
+        'contentBuilder.resourceList:resources',
+        'contentBuilder.resourceList:resources.target',
+    ])
+-%}
+
+{%- minify -%}
+
+    {%- for block in content.contentBuilder.collect().all() -%}
+
+        {%- switch block.type -%}
+
+            {%- case 'article' -%}
+
+                {%- include '_molecules/content/content--article' ignore missing with {
+                    content: block.article,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case 'blockQuote' -%}
+
+                {%- include '_molecules/quotes/quote--block' ignore missing with {
+                    content: block,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case "form" -%}
+
+                {%- include '_organisms/forms/form--primary' ignore missing with {
+                    form: block.form.one().handle ??? null,
+                } -%}
+
+            {%- case 'galleryImages' -%}
+
+                {%- include '_organisms/grids/grid--gallery' ignore missing with {
+                    images: block.images,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case 'highlightCards' -%}
+
+                {%- include '_organisms/cards/cards--highlight' ignore missing with {
+                    cards: block.cards.collect().all() ??? null,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case "media" -%}
+
+                {%- include '_molecules/media/media--embed' ignore missing with {
+                    content: block,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case "resourceList" -%}
+                {%- include '_organisms/lists/list--resources' ignore missing with {
+                    resources: block.resources,
+                } -%}
+
+            {%- case 'sectionHeader' -%}
+
+                {%- include '_molecules/content/content--section-header' ignore missing with {
+                    content: block,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case 'singleImage' -%}
+
+                {%- include '_molecules/images/image--article' ignore missing with {
+                    image: block.image.collect().one(),
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case "spotlightCards" -%}
+
+                {%- include '_organisms/cards/cards--spotlight' ignore missing with {
+                    cards: block.cards,
+                    category: block.filter ??? null,
+                    limit: block.limit ??? null,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+            {%- case 'standfirst' -%}
+
+                {%- include '_molecules/content/content--standfirst' ignore missing with {
+                    content: block,
+                    utilities: 'mb-10 lg:mb-20'
+                } -%}
+
+        {%- endswitch -%}
+
+    {%- endfor -%}
+
+{%- endminify -%}

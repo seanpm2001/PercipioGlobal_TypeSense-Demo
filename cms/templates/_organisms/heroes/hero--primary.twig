@@ -1,0 +1,28 @@
+{%- import '_macros/atoms' as render -%}
+
+{%- minify -%}
+
+    <header class="w-full min-h-[65vh] pt-20 pb-10 md:pb-32 md:pt-60 flex items-center justify-center">
+        <div class="container max-w-screen-xl mx-auto flex flex-col items-center">
+
+            {# heading #}
+            <h1 class="text-center max-w-3xl">
+                <span class="sr-only">{{- seomatic.site.identity.genericName }}: </span>
+                {{- render.atom('text', 'title', {
+                    content: content.heading ??? entry.title,
+                    color: 'text-gray-800'
+                }) -}}
+            </h1>
+
+            {# description #}
+            <div class="max-w-3xl">
+                {%- if content.description -%}
+                    {{- render.atom('text', 'description', {
+                        content: content.description
+                    }) -}}
+                {%- endif -%}
+            </div>
+
+        </div>
+    </header>
+{%- endminify -%}

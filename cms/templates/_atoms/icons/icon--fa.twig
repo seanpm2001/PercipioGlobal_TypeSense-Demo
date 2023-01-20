@@ -1,0 +1,26 @@
+{%- extends '_atoms/icons/_icon--props' -%}
+
+{#
+    ### PROPERTIES ###
+    ------------------
+
+    INHERITED FROM: `_atoms/icons/icon--props.twig`
+#}
+
+{%- block icon -%}
+
+    {%- set sizes = {
+        'inline': 'ml-1 text-xs',
+        'xs': 'text-sm',
+        'sm': 'text-base',
+        'md': 'text-lg',
+        'lg': 'text-xl',
+        'xl': 'text-2xl md:text-4xl',
+        '2xl': 'text-5xl',
+    } -%}
+
+    <span class="{{ sizes[props.size] ??? sizes['sm'] }} {{ props.parentcss }}">
+
+        <icon--fa icon="{{- props.icon -}}" utilities="{{- props.iconcss }} {{ sizes[props.size] ??? sizes['sm'] -}}"></icon--fa>
+    </span>
+{%- endblock -%}

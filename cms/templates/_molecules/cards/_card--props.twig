@@ -1,0 +1,17 @@
+{#
+    ### PROPERTIES ###
+    ---------------
+
+    content: (OBJ) -- the specific content for the card
+    utilities: (STR) -- the specific TW spacing utilities to add
+#}
+
+{%- set props = {
+    content: content ??? null,
+    utilities: utilities ?? null,
+    limit: limit ??? null,
+    category: category ??? null
+} -%}
+
+{%- block card -%}
+{%- endblock -%}

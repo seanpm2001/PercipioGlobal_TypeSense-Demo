@@ -1,0 +1,30 @@
+{% import '_macros/atoms' as render %}
+{% import '_macros/functions' as functions %}
+
+{%- set props = {
+    asset: content.embed|length > 0 ? craft.embeddedAssets.get(content.embed[0]) : null,
+    utilities: utilities ??? ''
+} -%}
+
+{%- minify -%}
+
+    {%- if props.asset -%}
+
+        {%- set ratio = props.asset.width and props.asset.height ? getRatioClass({width: props.asset.width, height: props.asset.height}) : 'aspect-w-16 aspect-h-9' -%}
+
+        <div class="w-full text-center">
+
+            <div class="container mx-auto max-w-screen-lg relative mb-8">
+                <div class="animate" data-animation="fadeIn">
+                    <figure class="{{ ratio }} mx-auto shadow-xl shadow-zinc-300 rounded-4xl overflow-hidden relative">
+                        {{- functions.embed(props.asset) -}}
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+    
+    {%- endif -%}
+
+{%- endminify -%}
+

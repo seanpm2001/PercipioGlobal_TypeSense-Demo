@@ -1,0 +1,46 @@
+{# -- Layout template for HTML pages -- #}
+{#
+    ┌─────────────────────────────────────────────────────────────────────────────┐
+    │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+    │ │                                                                         │ │
+    │ │                                                                         │ │
+    │ │                                                                         │ │
+    │ │                                 content                                 │ │
+    │ └─────────────────────────────────────────────────────────────────────────┘ │
+    │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+    │ │                                                                         │ │
+    │ │                                                                         │ │
+    │ │                                                                         │ │
+    │ │                               subContent                                │ │
+    │ └─────────────────────────────────────────────────────────────────────────┘ │
+    │                                                                             │
+    │                                  bodyHtml                                   │
+    └─────────────────────────────────────────────────────────────────────────────┘
+#}
+{% extends '_boilerplate/_layouts/base-html-layout.twig' %}
+
+{# -- Any <meta> tags that should be included in the <head> #}
+{% block headMeta %}
+{% endblock headMeta %}
+
+{# -- Any <link> tags that should be included in the <head> #}
+{% block headLinks %}
+{% endblock headLinks %}
+
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+{% endblock headCss %}
+
+{% block entry %}
+{% endblock entry %}
+
+{# -- Page body -- #}
+{% block bodyHtml %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {# -- HTML Footer -- #}
+    {% include '_boilerplate/_partials/global-footer.twig' %}
+{% endblock bodyHtml %}
