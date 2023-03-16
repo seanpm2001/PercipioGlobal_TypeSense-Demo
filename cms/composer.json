@@ -20,7 +20,10 @@
         "php": "^8.0.2",
         "craftcms/cms": "^4.0.0",
         "craftcms/feed-me": "5.0.5",
+        "nystudio107/craft-minify": "4.0.0-beta.2",
+        "nystudio107/craft-seomatic": "^4.0",
         "nystudio107/craft-vite": "^4.0.0-beta.4",
+        "percipiolondon/craft-typesense": "^4.0",
         "verbb/super-table": "^3.0.0-beta.3",
         "vlucas/phpdotenv": "^5.4.1",
         "yiisoft/yii2-redis": "^2.0.6"
@@ -33,7 +36,8 @@
     "config": {
         "allow-plugins": {
             "craftcms/plugin-installer": true,
-            "yiisoft/yii2-composer": true
+            "yiisoft/yii2-composer": true,
+            "php-http/discovery": true
         },
         "optimize-autoloader": true,
         "sort-packages": true

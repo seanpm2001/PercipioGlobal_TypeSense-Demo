@@ -56,66 +56,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 541cd7d3-f3f7-4a7f-99ba-916f38f123e8 # Street
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 2e47ffcc-0af2-4f29-a4c2-35f10fd199dd
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 07b24f6a-8c54-4b75-9f3d-33e14b617f29 # Town
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b8340187-6b8e-41d6-b4f9-78e2e5ef5179
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: ab485563-3b1a-4aba-8573-e3eea22285b4 # Locality
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b97ce8f8-d4f4-420a-9667-776e4fb2e4a1
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 31819c19-99f9-4cbc-b590-58f203b9ecb7 # County
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 772fcccd-2a84-41a8-a3d4-6a06a9447061
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 8677e73c-02aa-48e3-acb5-88ea1d7af642 # Region
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: a05b8557-9f55-4875-89f4-bc96a6763cf6
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: f4064c2f-64fc-4f44-977f-b2c0472c20f8 # Local Authority
             instructions: null
             label: null
@@ -164,6 +104,96 @@ fieldLayouts:
             width: 100
         name: Content
         uid: 39c541ef-d51c-4bad-b2b3-d2087f02a3ed
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 541cd7d3-f3f7-4a7f-99ba-916f38f123e8 # Street
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e47ffcc-0af2-4f29-a4c2-35f10fd199dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 07b24f6a-8c54-4b75-9f3d-33e14b617f29 # Town
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8340187-6b8e-41d6-b4f9-78e2e5ef5179
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: ab485563-3b1a-4aba-8573-e3eea22285b4 # Locality
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b97ce8f8-d4f4-420a-9667-776e4fb2e4a1
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 31819c19-99f9-4cbc-b590-58f203b9ecb7 # County
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 772fcccd-2a84-41a8-a3d4-6a06a9447061
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8677e73c-02aa-48e3-acb5-88ea1d7af642 # Region
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a05b8557-9f55-4875-89f4-bc96a6763cf6
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 13412f10-b351-463b-9a4c-94685e2bd78c # Latitude
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d619dc1f-1fd0-440c-b262-737e507c556e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: eb8cbcd0-b3b7-4fb7-a764-512f664cb182 # Longitude
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b0882246-29ba-4b94-94fb-00a19e864987
+            userCondition: null
+            warning: null
+            width: 50
+        name: Address
+        uid: 12fd15a1-dd81-4b89-a302-6281d1326a0c
         userCondition: null
 handle: default
 hasTitleField: true

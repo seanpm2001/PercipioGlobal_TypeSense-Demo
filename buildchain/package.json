@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.5",
+    "@headlessui/vue": "^1.7.12",
+    "@heroicons/vue": "^2.0.16",
     "@tailwindcss/aspect-ratio": "latest",
     "@tailwindcss/line-clamp": "latest",
     "@tailwindcss/typography": "latest",

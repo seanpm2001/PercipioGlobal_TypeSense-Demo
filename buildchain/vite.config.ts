@@ -21,9 +21,6 @@ export default defineConfig(({ command }) => ({
                 app: './src/js/app.ts',
                 'lazysizes-wrapper': './src/js/utils/lazysizes-wrapper.ts',
             },
-            output: {
-                sourcemap: true
-            },
         }
     },
     plugins: [
@@ -52,7 +49,6 @@ export default defineConfig(({ command }) => ({
         visualizer({
             filename: '../src/web/dist/assets/stats.html',
             template: 'treemap',
-            sourcemap: true,
         }),
         eslintPlugin({
             cache: false,

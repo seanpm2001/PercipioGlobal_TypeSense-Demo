@@ -1,4 +1,4 @@
-dateModified: 1674232298
+dateModified: 1678892572
 elementSources:
   craft\elements\Entry:
     -
@@ -12,6 +12,17 @@ elementSources:
         - postDate
         - expiryDate
         - author
+        - link
+        - 'field:13412f10-b351-463b-9a4c-94685e2bd78c' # Latitude
+        - 'field:eb8cbcd0-b3b7-4fb7-a764-512f664cb182' # Longitude
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: singles
+      tableAttributes:
         - link
       type: native
     -
@@ -176,7 +187,9 @@ meta:
     8677e73c-02aa-48e3-acb5-88ea1d7af642: Region # Region
     9151f126-34cf-4f3a-960f-107acc9842ad: Heading # Heading
     9475b42a-7657-4e3f-9d5b-1e1b5a1732ca: Swatch # Swatch
+    13412f10-b351-463b-9a4c-94685e2bd78c: Latitude # Latitude
     13653e63-9892-4752-b260-32518bc3bb3d: Cards # Cards
+    20887c4b-133d-43eb-90b3-ed3f08837391: Homepage # Homepage
     25958ba0-5f4a-48fc-9dee-0064db99f702: 'Utility Icon' # Utility Icon
     31819c19-99f9-4cbc-b590-58f203b9ecb7: County # County
     33274ae4-f375-4070-b42c-f1cef4e48a81: Heading # Heading
@@ -233,6 +246,7 @@ meta:
     d09756bb-3dd5-4ad8-b6eb-6e3595705141: Description # Description
     d2e22319-599d-4193-b09f-3d48c90668e6: Heading # Heading
     d5dde356-9f59-4da4-ad17-e3d7825da610: Country # Country
+    d6b3710f-fede-43f8-9a80-e00a13ce0f36: Homepage # Homepage
     d8cef538-a756-4496-b7f6-0e0bb61c14c2: 'Primary Navigation' # Primary Navigation
     d9bfce22-613d-44cc-bdac-b06404b4a8ea: Heading # Heading
     d613d12d-ac03-4153-942b-0cca809f451b: 'Body Content' # Body Content
@@ -250,6 +264,7 @@ meta:
     e7b63d80-91cc-438a-b670-59cbb778ca14: Heading # Heading
     e531a8df-ea73-4e09-8422-d08a20883128: Slides # Slides
     e561deca-d709-4e55-89be-2b9254d635e4: Heading # Heading
+    eb8cbcd0-b3b7-4fb7-a764-512f664cb182: Longitude # Longitude
     eb808a1d-0eb6-4d72-8f1a-4eb2ccf1fb93: Callout # Callout
     ebc9bc3a-83e6-4cab-956d-f254a119f606: 'Show Logo' # Show Logo
     ec91bde6-778d-4030-89fe-45614d871e81: Target # Target
@@ -281,6 +296,15 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: PO6ROKVSZN2K5CNGS8YN8XL5
+    schemaVersion: 3.0.11
   super-table:
     edition: standard
     enabled: true
@@ -290,6 +314,180 @@ plugins:
     enabled: true
     licenseKey: YLR368QSFHK7JWHSZ1NBI9N3
     schemaVersion: 1.0.0
+  typesense:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      apiKey: $TYPESENSE_API_KEY
+      cluster: $TYPESENSE_CLUSTER
+      clusterPort: '443'
+      collections:
+        -
+          __assoc__:
+            -
+              - indexName
+              - schools
+            -
+              - section
+              - schools.default
+            -
+              - schema
+              -
+                __assoc__:
+                  -
+                    - name
+                    - schools
+                  -
+                    - section
+                    - schools.default
+                  -
+                    - fields
+                    -
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - title
+                          -
+                            - type
+                            - string
+                          -
+                            - sort
+                            - true
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - slug
+                          -
+                            - type
+                            - string
+                          -
+                            - facet
+                            - true
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - handle
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - post_date_timestamp
+                          -
+                            - type
+                            - int32
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - geolocation
+                          -
+                            - type
+                            - auto
+                  -
+                    - default_sorting_field
+                    - post_date_timestamp
+            -
+              - elementType
+              - craft\elements\Entry
+            -
+              - criteria
+              -
+                __assoc__:
+                  0:
+                    - editable
+                    - false
+                  1:
+                    - sectionId
+                    -
+                      - 18
+                  9:
+                    - elementType
+                    - craft\elements\Entry
+                  10:
+                    - contentTable
+                    - '{{%content}}'
+                  12:
+                    - inReverse
+                    - false
+                  13:
+                    - asArray
+                    - false
+                  14:
+                    - ignorePlaceholders
+                    - false
+                  15:
+                    - drafts
+                    - false
+                  16:
+                    - provisionalDrafts
+                    - false
+                  20:
+                    - savedDraftsOnly
+                    - false
+                  21:
+                    - revisions
+                    - false
+                  28:
+                    - fixedOrder
+                    - false
+                  29:
+                    - status
+                    -
+                      - live
+                  30:
+                    - archived
+                    - false
+                  31:
+                    - trashed
+                    - false
+                  34:
+                    - siteId
+                    - 2
+                  35:
+                    - unique
+                    - false
+                  37:
+                    - leaves
+                    - false
+                  45:
+                    - orderBy
+                    - ''
+                  46:
+                    - withStructure
+                    - false
+                  59:
+                    - select
+                    -
+                      __assoc__:
+                        -
+                          - '**'
+                          - '**'
+                  61:
+                    - distinct
+                    - false
+                  75:
+                    - emulateExecution
+                    - false
+                  76:
+                    - hasMethods
+                    - true
+                  77:
+                    - canSetProperties
+                    - true
+      nearestNode: $TYPESENSE_NEAREST
+      pluginName: Typesense
+      port: '443'
+      protocol: http
+      searchOnlyApiKey: $TYPESENSE_SEARCH_ONLY_API_KEY
+      server: 0.0.0.0
+      serverType: cluster
   vite:
     edition: standard
     enabled: true
@@ -297,7 +495,7 @@ plugins:
 system:
   edition: pro
   live: true
-  name: 'Percipio Global Ltd.'
+  name: 'Craft Typesense Demo'
   retryDuration: null
-  schemaVersion: 4.0.0.9
+  schemaVersion: 4.4.0.4
   timeZone: Europe/London
