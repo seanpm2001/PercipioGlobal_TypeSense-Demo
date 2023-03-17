@@ -17,7 +17,7 @@
 
 {%- set classes = {
     _default: 'block font-primary',
-    color: 'text-gray-800',
+    color: 'text-gray-700',
     print: 'print:text-black print:text-lg print:leading-6 break-avoid',
 } -%}
 
@@ -29,10 +29,10 @@
 
     {%- minify -%}
 
-        <div class="max-w-[80ch] my-5 md:my-10 {{ props.utilities -}}">
+        <div class="container max-w-[80ch] mx-auto my-5 md:my-10 {{ props.utilities -}}">
             <div class="animate" data-animation="slideBottomToTop">
                 <h2 class="{{- classes._default }} {{ classes.color}} {{ classes.print }}">
-                    {{- render.atom('text', 'title', { content: props.heading }) -}}
+                    {{- render.atom('text', 'h2', { content: props.heading }) -}}
                 </h2>
             </div>
         </div>

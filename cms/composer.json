@@ -1,30 +1,48 @@
 {
-    "name": "percipioglobal/craft",
-    "description": "Percipio's Craft CMS scaffolding for projects",
-    "version": "4.0.0",
+    "name": "percipioglobal/percipio-site",
+    "description": "Percipio.London brand website",
+    "version": "2.0.8",
     "keywords": [
         "Percipio"
     ],
     "license": "MIT",
-    "homepage": "https://percipio.london/",
+    "homepage": "https://sandbox.percipio.london/",
     "type": "project",
     "support": {
         "email": "support@percipio.london",
-        "issues": "https://github.com/percipioglobal/craft/issues",
-        "source": "https://github.com/percipioglobal/craft",
-        "docs": "https://github.com/percipioglobal/craft"
+        "issues": "https://github.com/percipioglobal/percipio-site/issues",
+        "source": "https://github.com/percipioglobal/percipio-site",
+        "docs": "https://github.com/percipioglobal/percipio-site"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": "^8.0.2",
-        "craftcms/cms": "^4.0.0",
-        "craftcms/feed-me": "5.0.5",
-        "nystudio107/craft-minify": "4.0.0-beta.2",
-        "nystudio107/craft-seomatic": "^4.0",
-        "nystudio107/craft-vite": "^4.0.0-beta.4",
+        "cocur/slugify": "^4.3",
+        "craftcms/aws-s3": "^2.0.0",
+        "craftcms/cms": "^4.2.4",
+        "craftcms/feed-me": "^5.0",
+        "craftcms/fix-fks": "^2.0",
+        "craftcms/mailgun": "^3.0.0",
+        "craftcms/redactor": "^3.0.0",
+        "hybridinteractive/craft-position-fieldtype": "^4.0.0-beta.3",
+        "hybridinteractive/craft-width-fieldtype": "^4.0.0-beta.3",
+        "nystudio107/craft-eagerbeaver": "^4.0.0-beta.1",
+        "nystudio107/craft-imageoptimize": "^4.0.0-beta.3",
+        "nystudio107/craft-minify": "^4.0.0-beta.2",
+        "nystudio107/craft-retour": "^4.1.3",
+        "nystudio107/craft-seomatic": "^4.0.0-beta.8",
+        "nystudio107/craft-typogrify": "^4.0.0-beta.2",
+        "nystudio107/craft-vite": "^4.0.3",
+        "percipioglobal/craft-colour-swatches": "^4.0.2",
+        "percipiolondon/craft-shortlink": "^4.0.0-beta.7",
         "percipiolondon/craft-typesense": "^4.0",
-        "verbb/super-table": "^3.0.0-beta.3",
+        "putyourlightson/craft-blitz": "^4.1.3",
+        "putyourlightson/craft-blitz-recommendations": "^2.1.1",
+        "putyourlightson/craft-sherlock": "^4.2.0",
+        "sebastianlenz/linkfield": "^2.1.3-rc",
+        "spicyweb/craft-embedded-assets": "^3.0.5",
+        "verbb/super-table": "^3.0.1",
         "vlucas/phpdotenv": "^5.4.1",
         "yiisoft/yii2-redis": "^2.0.6"
     },
@@ -50,9 +68,8 @@
         "pre-craft-update": [],
         "post-craft-update": [
             "Composer\\Config::disableProcessTimeout",
-            "@php craft install/check --interactive=0 && php craft clear-caches/all --interactive=0 || exit 0",
-            "@php craft install/check --interactive=0 && php craft migrate/all --interactive=0 || exit 0",
-            "@php craft install/check --interactive=0 && php craft project-config/apply --interactive=0 || exit 0"
+            "@php craft install/check && php craft clear-caches/all --interactive=0 || exit 0",
+            "@php craft install/check && php craft up --interactive=0 || exit 0"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

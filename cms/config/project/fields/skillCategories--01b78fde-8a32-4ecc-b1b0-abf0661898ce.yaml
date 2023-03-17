@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 58eccc39-1c9e-45ac-bae8-465deff69786 # Team
+handle: skillCategories
+instructions: 'Add the staff member their skills'
+name: Skills
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: 'Add a skill'
+  showSiteMenu: true
+  sources:
+    - 'section:8e46ac55-077c-4dba-8315-4e658288f515'
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

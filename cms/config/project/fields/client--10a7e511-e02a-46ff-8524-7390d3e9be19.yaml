@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 151de730-f956-437c-a617-de5725e4c07a # Projects
+handle: client
+instructions: 'Select a client to connect to this entry'
+name: Client
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: 'Choose a client'
+  showSiteMenu: true
+  sources:
+    - 'section:dbc716a7-2122-4b92-b942-471970256a35'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

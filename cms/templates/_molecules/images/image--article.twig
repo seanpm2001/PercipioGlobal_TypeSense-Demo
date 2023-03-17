@@ -7,9 +7,9 @@
             <section class="container max-w-[84ch] mx-auto pb-8 {{ props.utilities -}}">
                 <div class="animate" data-animation="fadeIn">
                     {{- render.atom('image', 'article', {
-                            image: props.image,
+                            image: props.image.collect().first(),
                             sizes: ['100vw'],
-                            alt: props.image.title,
+                            alt: props.image.title ??? null,
                             placeholders: placeholders,
                         })
                     -}}

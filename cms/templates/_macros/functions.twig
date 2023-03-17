@@ -18,11 +18,16 @@
 {# Parses authors metadata #}
 {% macro authors(authors, props) %}
 
-    {% set category = props.category.collect().one() ??? null %}
+    {% set category = props.category.collect().first() ??? null %}
 
     {% apply spaceless %}
         {% for author in authors %}
 
+        {%- if author.status == 'disabled' -%}
+            <span>
+                {{- author.title -}}
+            </span>
+        {%- else -%}
             <a class="text-blue-500"
                 href="{{- author.url -}}"
                 data-tag-category="author"
@@ -32,6 +37,7 @@
             >
                 {{- author.title -}}
             </a>
+        {%- endif -%}
 
             {{- not loop.last and loop.index != loop.length - 1 ? ', ' -}}
             {{- loop.index == loop.length - 1 ? ' and ' : '' -}}
@@ -44,15 +50,9 @@
 {% macro categories(categories) %}
     {% apply spaceless %}
         {% for category in categories %}
-            <a class="text-blue-500"
-                href="{{- category.url -}}"
-                data-tag-category="author"
-                data-tag-action="click"
-                data-tag-label="{{- category.url -}}"
-                aria-label="{{- 'A ' ~ category ~ ' post' -}}"
-            >
+            <span class="text-blue-500">
                 {{- category.title -}}
-            </a>
+            </span>
         {% endfor %}
     {% endapply %}
 {% endmacro %}
@@ -97,6 +97,19 @@
 		{{- obj ? render.atom(obj.type, obj.atom, obj.options) : lut['default'] -}}
 
 	{%- endapply -%}
+{%- endmacro -%}
+
+{# Add ga tags #}
+{%- macro ga(tags) -%}
+
+    {%- apply spaceless -%}
+
+        {{ tags.category ??? null ? 'data-tag-category=' ~ tags.category : '' }}
+        {{ tags.action ??? null ? 'data-tag-action=' ~ tags.action : '' }}
+        {{ tags.label ??? null ? 'data-tag-label=' ~ tags.label : '' }}
+
+    {%- endapply -%}
+
 {%- endmacro -%}
 
 {# Parse fa icon #}

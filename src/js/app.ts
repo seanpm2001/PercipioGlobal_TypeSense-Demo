@@ -1,25 +1,23 @@
+
 import App from '@/vue/App.vue'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
-// Import font awesome icons
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import './assets/icons'
 
 // Import our CSS
-import '@/css/app.pcss'
+import '@/css/app.pcss';
 
 // App main
 const main = async () => {
     const pinia = createPinia()
+    pinia.use(piniaPluginPersistedstate)
     const app = createApp(App)
-
-    app.use(pinia)
-
-    return app.mount('#app-container')
+    return app.use(pinia).mount('#page-container')
 }
 
 // Execute async function
-main().then(() => {
+main().then( () => {
     console.log()
 })
 

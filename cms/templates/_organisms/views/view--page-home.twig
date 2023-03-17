@@ -1,1 +1,7 @@
-<view--home></view--home>
+{%- include '_organisms/builders/builder--hero' ignore missing with {
+    content: entry,
+} -%}
+
+{%- include '_organisms/builders/builder--page' with {
+    content: entry,
+} -%}

@@ -1,10 +1,12 @@
+{% import '_macros/icons' as icons -%}
+
 {%- set utilities = utilities ??? '' -%}
 
-<nav class="{{- utilities -}}" role="menu" aria-label="Social media pages of {{ seomatic.site.identity.genericName }}">
+<nav class="{{- utilities -}}" role="menu" aria-label="Social media pages of Percipio">
     {%- for social in seomatic.site.sameAsLinks -%}
         <a
             href="{{- social.url -}}"
-            class="inline-block"
+            class="inline-block text-lg px-3 text-white"
             title="{{- social.siteName -}}"
             aria-label="{{- social.siteName -}}"
             target="_blank"
@@ -15,7 +17,7 @@
             data-tag-label="{{- social.url -}}"
         >
             <span class="sr-only">{{- social.siteName -}}</span>
-            <icon--fa icon="{{- social.handle -}}"></icon--fa>
+            <i aria-hidden="true" class="{{- icons.fa_icon_lut(social.handle) -}}"></i>
         </a>
     {%- endfor -%}
 </nav>

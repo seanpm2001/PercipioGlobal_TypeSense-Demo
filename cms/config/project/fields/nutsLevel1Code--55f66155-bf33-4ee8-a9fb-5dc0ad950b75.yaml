@@ -1,0 +1,19 @@
+columnSuffix: dtmypnuv
+contentColumnType: text
+fieldGroup: d8cd0188-93b8-4702-83ab-558ab8cfb6ef # Schools
+handle: nutsLevel1Code
+instructions: null
+name: 'Nomenclature of Territorial Units for Stastics Code'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

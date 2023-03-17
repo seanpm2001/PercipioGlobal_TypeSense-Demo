@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 151de730-f956-437c-a617-de5725e4c07a # Projects
+handle: projectCategories
+instructions: 'Please select or create a category this project belongs to.'
+name: 'Project Categories'
+searchable: true
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: true
+  sources:
+    - 'section:0a2a59e5-bea0-4308-a46c-dc436c4ec38a'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

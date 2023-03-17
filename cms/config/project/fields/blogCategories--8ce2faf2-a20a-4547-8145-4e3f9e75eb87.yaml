@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b74a2d1f-f160-4a53-9a84-05b89c63c277 # Blog
+handle: blogCategories
+instructions: 'Please select or create a category this blog belongs to.'
+name: 'Blog Categories'
+searchable: true
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: true
+  sources:
+    - 'section:97cfde00-930a-420d-a54a-a3271ac35e9b'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries
