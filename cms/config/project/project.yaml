@@ -1,4 +1,4 @@
-dateModified: 1679063170
+dateModified: 1679204819
 elementSources:
   craft\elements\Entry:
     -
@@ -786,335 +786,9 @@ plugins:
     enabled: true
     licenseKey: $PLUGIN_SEOMATIC
     schemaVersion: 3.0.11
-  sherlock:
-    edition: lite
-    enabled: true
-    schemaVersion: 4.1.0
-    settings:
-      apiKey: ilxpipwqgwawlmfmfoimsisjopelqjkr
-      blowfishHashCost:
-        __assoc__:
-          -
-            - threshold
-            - 13
-      contentSecurityPolicy:
-        __assoc__:
-          -
-            - canFail
-            - true
-      contentSecurityPolicySettings:
-        __assoc__:
-          -
-            - enabled
-            - ''
-          -
-            - enforce
-            - '1'
-          -
-            - header
-            - '1'
-          -
-            - directives
-            -
-              -
-                - '1'
-                - default-src
-                - '''self'''
-              -
-                - '1'
-                - script-src
-                - '''self'' ''cc4fc0daa6b8402e96f0001df44f56a106803d3b8b06d0bc42700100835290f4'' ''7ee5423273d2a18cbdd8ef6f5a4fe85e405a158f84a6bf97447c3a475e0ff838'' ''7751507cbced412d6d21de0465faead1c50a86c735aad3b3a4013bd8a8730205'' https://cdn.polyfill.io/v3/polyfill.min.js https://www.google-analytics.com/analytics.js https://www.googletagmanager.com/gtag/js'
-              -
-                - '1'
-                - style-src
-                - '''self'' ''e0bf98fa8553be29a7dc731e2cd63624ba249b793cd3986f698f2c8de3f5bc23'' https://fonts.googleapis.com;'
-              -
-                - '1'
-                - font-src
-                - '''self'' https://fonts.gstatic.com'
-              -
-                - '1'
-                - frame-src
-                - '''self'' https://player.vimeo.com'
-              -
-                - '1'
-                - img-src
-                - '''self'' data: https://dnuzs9ej922bx.cloudfront.net https://www.google-analytics.com'
-      cooldownDuration:
-        __assoc__:
-          -
-            - threshold
-            - 300
-      cors:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      craftFilePermissions:
-        __assoc__:
-          -
-            - canFail
-            - true
-      craftFolderPermissions:
-        __assoc__:
-          -
-            - canFail
-            - true
-      craftFoldersAboveWebRoot:
-        __assoc__:
-          -
-            - canFail
-            - true
-      criticalCraftUpdates:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      criticalPluginUpdates:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      defaultDirMode:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 509
-      defaultFileMode:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 436
-      defaultTokenDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 86400
-      devMode:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      disabledTests: null
-      elevatedSessionDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 300
-      enableCsrfProtection:
-        __assoc__:
-          -
-            - canFail
-            - true
-      expectCT:
-        __assoc__:
-          -
-            - canFail
-            - true
-      headerProtectionSettings:
-        __assoc__:
-          -
-            - enabled
-            - '1'
-          -
-            - headers
-            -
-              -
-                - '1'
-                - Referrer-Policy
-                - no-referrer-when-downgrade
-              -
-                - '1'
-                - Strict-Transport-Security
-                - max-age=15552000
-              -
-                - '1'
-                - X-Content-Type-Options
-                - nosniff
-              -
-                - '1'
-                - X-Frame-Options
-                - SAMEORIGIN
-              -
-                - '1'
-                - X-Xss-Protection
-                - '1; mode=block'
-      highSecurityLevel: true
-      httpsControlPanel:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      httpsFrontEnd:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      integrationSettings:
-        __assoc__:
-          -
-            - putyourlightson\sherlock\integrations\BugsnagIntegration
-            -
-              __assoc__:
-                -
-                  - apiKey
-                  - ''
-          -
-            - putyourlightson\sherlock\integrations\RollbarIntegration
-            -
-              __assoc__:
-                -
-                  - accessToken
-                  - ''
-          -
-            - putyourlightson\sherlock\integrations\SentryIntegration
-            -
-              __assoc__:
-                -
-                  - dsn
-                  - ''
-                -
-                  - tracesSampleRate
-                  - ''
-      invalidLoginWindowDuration:
-        __assoc__:
-          -
-            - threshold
-            - 3600
-      maxInvalidLogins:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 5
-      monitor: false
-      notificationEmailAddresses: $SYSTEM_EMAIL
-      phpComposerVersion:
-        __assoc__:
-          -
-            - canFail
-            - true
-      phpVersion:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - thresholds
-            -
-              __assoc__:
-                -
-                  - '8.0'
-                  - '2023-11-26'
-                -
-                  - '8.1'
-                  - '2024-11-25'
-      preventUserEnumeration:
-        __assoc__:
-          -
-            - canFail
-            - true
-      referrerPolicy:
-        __assoc__:
-          -
-            - canFail
-            - true
-      rememberedUserSessionDuration:
-        __assoc__:
-          -
-            - threshold
-            - 12096004
-      requireEmailVerification:
-        __assoc__:
-          -
-            - canFail
-            - true
-      sanitizeSvgUploads:
-        __assoc__:
-          -
-            - canFail
-            - true
-      sendPoweredByHeader:
-        __assoc__:
-          -
-            - canFail
-            - false
-      strictTransportSecurity:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 15552000
-      testToEmailAddress:
-        __assoc__:
-          -
-            - canFail
-            - true
-      translationDebugOutput:
-        __assoc__:
-          -
-            - canFail
-            - true
-      useSecureCookies:
-        __assoc__:
-          -
-            - canFail
-            - true
-      userSessionDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 3600
-      verificationCodeDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 86400
-      webAliasInSiteBaseUrl:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      webAliasInVolumeBaseUrl:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      xContentTypeOptions:
-        __assoc__:
-          -
-            - canFail
-            - true
-      xFrameOptions:
-        __assoc__:
-          -
-            - canFail
-            - true
   shortlink:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 1.0.0
     settings:
       allowCustom: true
@@ -1145,6 +819,263 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  typesense:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      apiKey: $TYPESENSE_API_KEY
+      cluster: $TYPESENSE_CLUSTER
+      clusterPort: $TYPESENSE_PORT
+      collections:
+        -
+          __assoc__:
+            -
+              - indexName
+              - schools
+            -
+              - section
+              - schools.default
+            -
+              - schema
+              -
+                __assoc__:
+                  -
+                    - name
+                    - schools
+                  -
+                    - section
+                    - schools.default
+                  -
+                    - fields
+                    -
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - title
+                          -
+                            - type
+                            - string
+                          -
+                            - sort
+                            - true
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - slug
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - urn
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - handle
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - schoolType
+                          -
+                            - type
+                            - string
+                          -
+                            - facet
+                            - true
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - localAuthority
+                          -
+                            - type
+                            - string
+                          -
+                            - facet
+                            - true
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - nutsLevel1
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - nutsLevel1Code
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - street
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - town
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - locality
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - county
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - region
+                          -
+                            - type
+                            - string
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - geolocation
+                          -
+                            - type
+                            - geopoint
+                          -
+                            - facet
+                            - true
+                      -
+                        __assoc__:
+                          -
+                            - name
+                            - post_date_timestamp
+                          -
+                            - type
+                            - int32
+                  -
+                    - default_sorting_field
+                    - post_date_timestamp
+            -
+              - elementType
+              - craft\elements\Entry
+            -
+              - criteria
+              -
+                __assoc__:
+                  2:
+                    - sectionId
+                    -
+                      - 30
+                  10:
+                    - elementType
+                    - craft\elements\Entry
+                  11:
+                    - contentTable
+                    - '{{%content}}'
+                  13:
+                    - inReverse
+                    - false
+                  14:
+                    - asArray
+                    - false
+                  15:
+                    - ignorePlaceholders
+                    - false
+                  16:
+                    - drafts
+                    - false
+                  17:
+                    - provisionalDrafts
+                    - false
+                  21:
+                    - savedDraftsOnly
+                    - false
+                  22:
+                    - revisions
+                    - false
+                  29:
+                    - fixedOrder
+                    - false
+                  30:
+                    - status
+                    -
+                      - live
+                  31:
+                    - archived
+                    - false
+                  32:
+                    - trashed
+                    - false
+                  35:
+                    - siteId
+                    - 2
+                  36:
+                    - unique
+                    - false
+                  38:
+                    - leaves
+                    - false
+                  46:
+                    - orderBy
+                    - ''
+                  47:
+                    - withStructure
+                    - false
+                  60:
+                    - select
+                    -
+                      __assoc__:
+                        -
+                          - '**'
+                          - '**'
+                  62:
+                    - distinct
+                    - false
+                  76:
+                    - emulateExecution
+                    - false
+                  77:
+                    - hasMethods
+                    - true
+                  78:
+                    - canSetProperties
+                    - true
+      nearestNode: $TYPESENSE_NEAREST
+      pluginName: Typesense
+      port: '443'
+      protocol: http
+      searchOnlyApiKey: $TYPESENSE_SEARCH_ONLY_API_KEY
+      server: 0.0.0.0
+      serverType: cluster
   typogrify:
     edition: standard
     enabled: true

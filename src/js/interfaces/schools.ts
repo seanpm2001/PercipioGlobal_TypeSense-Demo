@@ -46,10 +46,12 @@ export interface Queries extends Filters {
 export interface Filter {
     field: string,
     values: Array<string>
+    combination: string
 }
 
 export interface Filters {
-    category: Filter,
+    localAuthority: Filter,
+    schoolType: Filter,
 }
 
 export interface Hit {
@@ -58,15 +60,20 @@ export interface Hit {
     text_match: number
 }
 
-interface SchoolsState {
+export interface Sort {
+    type: string,
+    order: string,
+}
+
+export interface SchoolsState {
     currentPage: number
     events: Events
     facets: Array<Facet> | null
     filters: Queries
     index: string | undefined
     limit: number
-    news?: Array<Hit> | null
-    searchApiKey: string
+    schools?: Array<Hit> | null
     sorting: Sort
     totalPages: number | null
+    totalResults: number | null
 }

@@ -55,6 +55,7 @@ return [
                     [
                         'name' => 'localAuthority',
                         'type' => 'string',
+                        'facet' => true
                     ],
                     [
                         'name' => 'nutsLevel1',
@@ -87,7 +88,8 @@ return [
                     [
                         'name' => 'geolocation',
                         'type' => 'geopoint',
-                        'facet' => true
+                        'facet' => true,
+                        'sort' => true
                     ],
                     [
                         'name' => 'post_date_timestamp',

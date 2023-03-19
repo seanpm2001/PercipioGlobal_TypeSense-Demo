@@ -3,6 +3,7 @@ import { dom, library } from '@fortawesome/fontawesome-svg-core';
 
 import {
     faAngleRight as farAngleRight,
+    faChevronDown as farChevronDown,
     faClipboard as farClipboard,
     faHashtag as farHashtag
 } from '@fortawesome/pro-regular-svg-icons';
@@ -27,6 +28,7 @@ library.add(
     fabVimeoV,
     fabYoutube,
     farAngleRight,
+    farChevronDown,
     farClipboard,
     farHashtag
 );

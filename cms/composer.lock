@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a53783ef9619b5cbec9525233b45654",
+    "content-hash": "50cee26067f750c56f31cdd919447863",
     "packages": [
         {
             "name": "amphp/amp",
@@ -7639,69 +7639,6 @@
             "time": "2022-05-16T18:07:25+00:00"
         },
         {
-            "name": "putyourlightson/craft-sherlock",
-            "version": "4.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/putyourlightson/craft-sherlock.git",
-                "reference": "b85786e4bfe0de430cfb19c1d3d9debf743388a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sherlock/zipball/b85786e4bfe0de430cfb19c1d3d9debf743388a1",
-                "reference": "b85786e4bfe0de430cfb19c1d3d9debf743388a1",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^4.0.0",
-                "php": "^8.0.2"
-            },
-            "require-dev": {
-                "codeception/codeception": "^4.1.29",
-                "codeception/module-asserts": "^1.3.1",
-                "codeception/module-yii2": "^1.1.5",
-                "craftcms/ecs": "dev-main",
-                "craftcms/phpstan": "dev-main",
-                "vlucas/phpdotenv": "^5.4.1",
-                "yiisoft/yii2-redis": "^2.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Sherlock",
-                "handle": "sherlock",
-                "developer": "PutYourLightsOn",
-                "developerUrl": "https://putyourlightson.com/",
-                "documentationUrl": "https://putyourlightson.com/plugins/sherlock",
-                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-sherlock/v4/CHANGELOG.md",
-                "class": "putyourlightson\\sherlock\\Sherlock"
-            },
-            "autoload": {
-                "psr-4": {
-                    "putyourlightson\\sherlock\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "proprietary"
-            ],
-            "description": "Security scanner and monitor to keep your site and CMS secure.",
-            "homepage": "https://putyourlightson.com/plugins/sherlock",
-            "keywords": [
-                "Craft",
-                "cms",
-                "craftcms",
-                "scanner",
-                "secure",
-                "security"
-            ],
-            "support": {
-                "docs": "https://putyourlightson.com/plugins/sherlock",
-                "issues": "https://github.com/putyourlightson/craft-sherlock/issues",
-                "source": "https://github.com/putyourlightson/craft-sherlock"
-            },
-            "time": "2023-01-02T14:29:04+00:00"
-        },
-        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "dist": {
@@ -11008,5 +10945,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
