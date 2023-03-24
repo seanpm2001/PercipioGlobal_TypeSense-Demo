@@ -20,19 +20,19 @@ const onToggle = () => {
 </script>
 <template>
     <fieldset>
-        <legend class="border-b border-gray-200 w-full">
+        <legend class="border-b border-blue-500/20 w-full">
             <button 
                 type="button" 
-                class="font-primary flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500" 
+                class="font-primary flex w-full items-center justify-between px-2 py-3 text-gray-400 hover:text-gray-500" 
                 :aria-controls="`filter-section-${filter.field_name}`" 
                 aria-expanded="false"
                 @click="onToggle"
             >
                 <span class="font-medium text-gray-900">
                     <span>{{ legend }}</span>
-                    <span class="inline-block pl-1 text-blue-500">{{ filter.counts.length }}</span>
+                    <span class="inline-block pl-1 text-pink-500">{{ filter.counts.length }}</span>
                 </span>
-                <span class="ml-6 flex items-center">
+                <span class="ml-6 flex items-center text-blue-500">
                     <!-- Expand icon, show/hide based on section open state. -->
                     <svg 
                         v-if="!expanded"
@@ -79,7 +79,7 @@ const onToggle = () => {
                         >
                         <span class="ml-3 min-w-0 flex-1 flex-1 text-gray-500">
                             <span>{{ item.value }}</span>
-                            <span class="pl-1 inline-block text-xs text-blue-500">{{ item.count }}</span>
+                            <span class="pl-1 inline-block text-xs text-pink-500">{{ item.count }}</span>
                         </span>
                     </label>
                 </div>

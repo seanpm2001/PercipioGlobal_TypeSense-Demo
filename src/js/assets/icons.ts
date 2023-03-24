@@ -5,7 +5,8 @@ import {
     faAngleRight as farAngleRight,
     faChevronDown as farChevronDown,
     faClipboard as farClipboard,
-    faHashtag as farHashtag
+    faHashtag as farHashtag,
+    faSearch as farSearch,
 } from '@fortawesome/pro-regular-svg-icons';
 
 import {
@@ -30,7 +31,8 @@ library.add(
     farAngleRight,
     farChevronDown,
     farClipboard,
-    farHashtag
+    farHashtag,
+    farSearch,
 );
 
 // convert i tags to SVG

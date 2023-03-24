@@ -52,6 +52,7 @@ export interface Filter {
 export interface Filters {
     localAuthority: Filter,
     schoolType: Filter,
+    geoLocation: Filter
 }
 
 export interface Hit {
@@ -65,8 +66,14 @@ export interface Sort {
     order: string,
 }
 
+interface Coords {
+    latitude: string,
+    longitude: string
+}
+
 export interface SchoolsState {
     currentPage: number
+    coords: Coords | null
     events: Events
     facets: Array<Facet> | null
     filters: Queries

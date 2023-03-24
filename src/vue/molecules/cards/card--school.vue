@@ -15,7 +15,7 @@ const kilometers = computed(() => {
 </script>
 
 <template>
-    <article class="flex w-full border-b border-gray-100 p-3 font-primary text-sm">
+    <article class="flex w-full border-b border-blue-500/20 p-3 font-primary text-sm">
         <div class="flex-1">
             <span class="text-xs">
                 {{ school.schoolType }}

@@ -1,12 +1,13 @@
 import { defineStore } from 'pinia'
 import { useSearchParameters, useTypesenseClient } from '../composables/typesense'
-import { SchoolsState, Hit } from '../interfaces/schools'
+import { SchoolsState, Hit, Coords } from '../interfaces/schools'
 
 export const useSchoolsStore = defineStore('schools', {
     state: (): SchoolsState => ({
-        currentPage: 1,
+        currentPage: 0,
+        coords: null,
         events: {
-            LOADING: false,
+            LOADING: true,
             UPDATE: false,
         },
         facets: null,
@@ -22,22 +23,41 @@ export const useSchoolsStore = defineStore('schools', {
                 field: 'schoolType',
                 values: [],
                 combination: '&&'
-            }            
+            },
+            geoLocation: {
+                field: 'geolocation',
+                values: [],
+                combination: '&&'
+            }          
         },
         index: 'schools',
         limit: 50,
         schools: null,
         sorting: {
-            type: 'post_date_timestamp',
-            order: 'desc',
+            type: 'title',
+            order: 'asc',
         },
         totalPages: 0,
         totalResults: 0,
     }),
+    persist: true,
     actions: {
+        setUserCoords(coords: Coords) {
+            this.coords = coords
+        },
         async fetch(reset = true) {
+            this.events.LOADING = true
+
             const client = useTypesenseClient()
             const searchParameters = useSearchParameters(this.filters, this.sorting)
+
+            // if(coords) {
+            //     this.sorting.type = `geolocation(${coords.latitude},${coords.longitude})`
+            //     this.sorting.order = 'asc'
+                
+            //     // @TODO set this as a filter
+            //     // searchParameters['filter_by'] = `geolocation:(${coords.latitude},${coords.longitude}, 300 km)`
+            // }
 
             // reset for new query or add up for paginations
             if(!reset) {
@@ -63,7 +83,7 @@ export const useSchoolsStore = defineStore('schools', {
                     this.currentPage = results.page
                     this.totalPages = Math.ceil(results.found / this.limit)
                     this.totalResults = results.out_of
-                    
+
                     if (results.hits) {
                         const hits: Array<Hit> = results.hits
 
@@ -79,55 +99,55 @@ export const useSchoolsStore = defineStore('schools', {
                 })
         },
         
-        async fetchGeo(reset = true, coords: any) {
-            const client = useTypesenseClient()
+        // async fetchGeo(reset = true, coords: any) {
+        //     this.events.LOADING = true
 
-            this.sorting.type = `geolocation(${coords.latitude},${coords.longitude})`
-            this.sorting.order = 'asc'
+        //     const client = useTypesenseClient()
 
-            const searchParameters = useSearchParameters(this.filters, this.sorting)
+        //     this.sorting.type = `geolocation(${coords.latitude},${coords.longitude})`
+        //     this.sorting.order = 'asc'
 
-            // reset for new query or add up for paginations
-            if(!reset) {
-                this.currentPage += 1
-            } else {
-                this.currentPage = 1
-                this.totalPages = 0
-                this.totalResults = null
-            }
+        //     const searchParameters = useSearchParameters(this.filters, this.sorting)
 
-            await client
-                .collections(this.index)
-                .documents()
-                .search({
-                    facet_by: 'localAuthority,schoolType',
-                    filter_by: `geolocation:(${coords.latitude},${coords.longitude})`,
-                    max_facet_values: 100,
-                    per_page: this.limit,
-                    page: this.currentPage,
-                    ...searchParameters,
-                })
-                .then((results: any) => {
-                    this.facets = results.facet_counts
-                    this.currentPage = results.page
-                    this.totalPages = Math.ceil(results.found / this.limit)
-                    this.totalResults = results.out_of
+        //     // reset for new query or add up for paginations
+        //     if(!reset) {
+        //         this.currentPage += 1
+        //     } else {
+        //         this.currentPage = 1
+        //         this.totalPages = 0
+        //         this.totalResults = null
+        //     }
 
-                    console.log(this.currentPage, this.totalPages, this.totalResults)
-                    
-                    if (results.hits) {
-                        const hits: Array<Hit> = results.hits
+        //     await client
+        //         .collections(this.index)
+        //         .documents()
+        //         .search({
+        //             facet_by: 'localAuthority,schoolType',
+        //             filter_by: `geolocation:(${coords.latitude},${coords.longitude})`,
+        //             max_facet_values: 100,
+        //             per_page: this.limit,
+        //             page: this.currentPage,
+        //             ...searchParameters,
+        //         })
+        //         .then((results: any) => {
+        //             this.facets = results.facet_counts
+        //             this.currentPage = results.page
+        //             this.totalPages = Math.ceil(results.found / this.limit)
+        //             this.totalResults = results.out_of
 
-                        // set results to the projects if it's a reset otherwise add the results to the existing ones
-                        if (reset) {
-                            this.schools = hits
-                        } else {
-                            this.schools = [...(this.schools || []), ...hits]
-                        }
-                    }
+        //             if (results.hits) {
+        //                 const hits: Array<Hit> = results.hits
 
-                    this.events.LOADING = false
-                })
-        }
+        //                 // set results to the projects if it's a reset otherwise add the results to the existing ones
+        //                 if (reset) {
+        //                     this.schools = hits
+        //                 } else {
+        //                     this.schools = [...(this.schools || []), ...hits]
+        //                 }
+        //             }
+
+        //             this.events.LOADING = false
+        //         })
+        // }
     }
 })
