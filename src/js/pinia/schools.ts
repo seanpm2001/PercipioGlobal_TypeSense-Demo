@@ -24,11 +24,11 @@ export const useSchoolsStore = defineStore('schools', {
                 values: [],
                 combination: '&&'
             },
-            geoLocation: {
-                field: 'geolocation',
-                values: '',
-                combination: '&&'
-            }          
+            // geoLocation: {
+            //     field: 'geolocation',
+            //     values: [],
+            //     combination: '&&'
+            // }          
         },
         index: 'schools',
         limit: 50,
@@ -60,14 +60,6 @@ export const useSchoolsStore = defineStore('schools', {
                 this.totalPages = 0
                 this.totalResults = null
             }
-
-            console.log({
-                facet_by: 'localAuthority,schoolType',
-                max_facet_values: 100,
-                per_page: this.limit,
-                page: this.currentPage,
-                ...searchParameters,
-            })
 
             await client
                 .collections(this.index)
@@ -102,7 +94,7 @@ export const useSchoolsStore = defineStore('schools', {
         },
 
         setSort(type: string) {
-            if(type === this.filters.geoLocation.field) {
+            if(type === 'geolocation' && this.coords) {
                 this.sorting.type = `${type}(${this.coords.latitude}, ${this.coords.longitude})`
             } else {
                 this.sorting.type = type
@@ -138,9 +130,9 @@ export const useSchoolsStore = defineStore('schools', {
                 this.filters.filterQuery += this.filters.schoolType.field + ':=[' + "`" + this.filters.schoolType.values.join("`,`") + "`" + '] ' + this.filters.schoolType.combination + ' '
             }
 
-            if (this.filters.geoLocation.values.length > 0) {
-                this.filters.filterQuery += `${this.filters.geoLocation.field}:=(${this.coords.latitude},${this.coords.longitude}, ${this.filters.geoLocation.values} km) ${this.filters.geoLocation.combination}`
-            }
+            // if (this.filters.geoLocation.values.length > 0) {
+            //     this.filters.filterQuery += `${this.filters.geoLocation.field}:=(${this.coords.latitude},${this.coords.longitude}, ${this.filters.geoLocation.values} km) ${this.filters.geoLocation.combination}`
+            // }
 
             this.filters.filterQuery = this.filters.filterQuery.substring(0, this.filters.filterQuery.lastIndexOf(' && '))
 

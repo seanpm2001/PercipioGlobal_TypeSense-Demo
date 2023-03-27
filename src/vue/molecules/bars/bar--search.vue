@@ -32,6 +32,7 @@ const onUpdateSearch = () => {
     >
         <i :class="['inline-flex text-blue-500', useIcons('search')]" />
         <input 
+            v-model="searchTerm"
             :class="[
                 'absolute left-0 top-0 w-full h-full',
                 'pl-10',
@@ -40,8 +41,7 @@ const onUpdateSearch = () => {
                 'focus:ring-2 focus:ring-offset-slate-50 focus:ring-blue-500/30',
             ]"
             placeholder="Search for a school"
-            v-model="searchTerm"
             @keyup="onUpdateSearch"
-        />
+        >
     </div>
 </template>

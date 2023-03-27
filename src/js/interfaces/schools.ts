@@ -45,14 +45,14 @@ export interface Queries extends Filters {
 
 export interface Filter {
     field: string,
-    values: Array<string> | string
+    values: Array<string>
     combination: string
 }
 
 export interface Filters {
     localAuthority: Filter,
     schoolType: Filter,
-    geoLocation: Filter
+    // geoLocation: Filter
 }
 
 export interface Hit {

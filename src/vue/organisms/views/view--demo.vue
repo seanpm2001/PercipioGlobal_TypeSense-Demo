@@ -10,8 +10,7 @@ import Search from '@/vue/molecules/bars/bar--search.vue'
 import Sort from '@/vue/molecules/sorts/sort--schools.vue'
 
 const schoolStore = useSchoolsStore()
-const { currentPage, totalPages, limit, events, coords, meta } = storeToRefs(schoolStore)
-const geo = ref(null)
+const { currentPage, totalPages, limit, events, meta } = storeToRefs(schoolStore)
 
 const getButton = () => {
     let value = 'Load more Schools'
@@ -54,7 +53,7 @@ onMounted(async () => {
     <section class="container max-w-screen-xl mx-auto pt-20 lg:pt-32 min-h-[80vh]">
         <header class="md:grid grid-cols-7 gap-6 w-full">
             <div class="col-span-7 flex items-center">
-                <Search utilities="flex-1"/>
+                <Search utilities="flex-1" />
                 <Sort utilities="ml-3" />
             </div>
         </header>

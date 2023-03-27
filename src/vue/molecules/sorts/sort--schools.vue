@@ -64,12 +64,15 @@ const onSetSort = (type) => {
             aria-label="Sort Schools"
             class="absolute min-w-[200px] bg-white top-full mt-2 right-0 rounded-xl shadow-2xl border border-blue-500/30 overflow-hidden"
         >
-            <ul role="menubar" aria-label="Sort Schools">
+            <ul
+                role="menubar"
+                aria-label="Sort Schools"
+            >
                 <li role="none">
                     <a 
                         href="#"
-                        @click.prevent="onSetSort('title')"
                         class="block font-primary text-sm text-blue-500 font-medium py-2 px-4 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+                        @click.prevent="onSetSort('title')"
                     >
                         Title
                     </a>
@@ -80,8 +83,8 @@ const onSetSort = (type) => {
                 >
                     <a 
                         href="#"
-                        @click.prevent="onSetSort('geolocation')"
                         class="block font-primary text-sm text-blue-500 font-medium py-2 px-4 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+                        @click.prevent="onSetSort('geolocation')"
                     >
                         Location
                     </a>

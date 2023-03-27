@@ -90,9 +90,9 @@ const onChecked = value => {
                         <input
                             :checked="onChecked(item.value)"
                             :aria-checked="onChecked(item.value) ? 'true' : 'false'"
-                            @input="() => onFilterUpdate(item.value)"
                             type="checkbox"
                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                            @input="() => onFilterUpdate(item.value)"
                         >
                         <span class="ml-3 min-w-0 flex-1 flex-1 text-gray-500">
                             <span>{{ item.value }}</span>
