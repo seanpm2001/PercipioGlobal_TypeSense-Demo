@@ -11,7 +11,10 @@ const { schools } = storeToRefs(schoolStore)
 </script>
 <template>
     <section 
-        class="mb-16 w-full rounded-xl shadow-2xl overflow-hidden"
+        :class="[
+            'mb-16 w-full',
+            schools.length > 0 ? 'rounded-xl shadow-2xl overflow-hidden' : ''
+        ]"
     >
         <Skeleton v-if="!schools" />
         <Card 
@@ -20,5 +23,11 @@ const { schools } = storeToRefs(schoolStore)
             :school="school.document"
             :geo="school?.geo_distance_meters"
         />
+        <span 
+            v-if="schools?.length === 0" 
+            class="font-primary text-sm text-gray-500 text-center block w-full pt-10"
+        >
+            There are no schools for your query
+        </span>
     </section>
 </template>

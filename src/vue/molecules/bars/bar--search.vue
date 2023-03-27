@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useSchoolsStore } from '@/js/pinia/schools'
 import { useIcons } from '@/js/composables/icons'
 
@@ -12,11 +13,16 @@ withDefaults(defineProps<Props>(), {
 })
 
 const schoolStore = useSchoolsStore()
+const { filters } = storeToRefs(schoolStore)
 const searchTerm = ref(null)
 
 const onUpdateSearch = () => {
     schoolStore.setSearch(searchTerm.value)
 }
+
+onMounted(() => {
+    searchTerm.value = filters.value.searchQuery
+})
 </script>
 <template>
     <div 

@@ -74,6 +74,13 @@ const onChecked = value => {
             </button>
         </legend>
 
+        <span 
+            v-if="filter.counts.length === 0"
+            class="font-primary text-sm text-gray-500 p-2 inline-block"
+        >
+            There are no filters available
+        </span>
+
         <div
             :id="`filter-section-${filter.field_name}`" 
             class="pt-3"
