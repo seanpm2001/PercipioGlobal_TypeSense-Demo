@@ -1,8 +1,11 @@
 
 import App from '@/vue/App.vue'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import VueClickAway from "vue3-click-away"
+
 import './assets/icons'
 
 // Import our CSS
@@ -12,8 +15,12 @@ import '@/css/app.pcss';
 const main = async () => {
     const pinia = createPinia()
     pinia.use(piniaPluginPersistedstate)
+
     const app = createApp(App)
-    return app.use(pinia).mount('#page-container')
+    app.use(pinia)
+    app.use(VueClickAway)
+
+    return app.mount('#page-container')
 }
 
 // Execute async function

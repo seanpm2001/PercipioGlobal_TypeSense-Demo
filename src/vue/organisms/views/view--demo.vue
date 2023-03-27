@@ -10,7 +10,7 @@ import Search from '@/vue/molecules/bars/bar--search.vue'
 import Sort from '@/vue/molecules/sorts/sort--schools.vue'
 
 const schoolStore = useSchoolsStore()
-const { currentPage, totalPages, limit, events, coords } = storeToRefs(schoolStore)
+const { currentPage, totalPages, limit, events, coords, meta } = storeToRefs(schoolStore)
 const geo = ref(null)
 
 const getButton = () => {
@@ -51,24 +51,29 @@ onMounted(async () => {
 })
 </script>
 <template>
-    <section class="grid grid-cols-7 gap-6 container max-w-screen-xl mx-auto mt-32 min-h-[80vh]">
-        <div class="col-span-7 flex items-center">
-            <Search utilities="flex-1"/>
-            <Sort utilities="ml-3" />
-        </div>
-        <aside class="col-span-2 sticky top-0">
-            <Filters />
-        </aside>
-        <main class="col-span-5">
-            <Cards />
+    <section class="container max-w-screen-xl mx-auto pt-20 lg:pt-32 min-h-[80vh]">
+        <header class="md:grid grid-cols-7 gap-6 w-full">
+            <div class="col-span-7 flex items-center">
+                <Search utilities="flex-1"/>
+                <Sort utilities="ml-3" />
+            </div>
+        </header>
+        <main class="md:grid grid-cols-7 gap-6 w-full mt-6">
+            <aside class="col-span-2 sticky top-0">
+                <Filters />
+            </aside>
+            <div class="col-span-5">
+                <span class="block text-right pr-2 font-primary text-xs pb-2 text-gray-400">{{ meta }}</span>
+                <Cards />
 
-            <ButtonLoadMore
-                v-if="currentPage < totalPages"
-                :button="getButton()"
-                :loading="events.LOADING"
-                utilities="mb-16"
-                @touch="loadMore"
-            />
+                <ButtonLoadMore
+                    v-if="currentPage < totalPages"
+                    :button="getButton()"
+                    :loading="events.LOADING"
+                    utilities="mb-16"
+                    @touch="loadMore"
+                />
+            </div>
         </main>
     </section>
 </template>

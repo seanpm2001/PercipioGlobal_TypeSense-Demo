@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useSchoolsStore } from '@/js/pinia/schools'
 import { useIcons } from '@/js/composables/icons'
 
 interface Props {
@@ -10,10 +11,11 @@ withDefaults(defineProps<Props>(), {
     utilities: ''
 })
 
+const schoolStore = useSchoolsStore()
 const searchTerm = ref(null)
 
 const onUpdateSearch = () => {
-    console.log("search", searchTerm.value)
+    schoolStore.setSearch(searchTerm.value)
 }
 </script>
 <template>
@@ -24,6 +26,7 @@ const onUpdateSearch = () => {
             'font-primary text-sm',
             'text-gray-900',
             'py-3 px-4',
+            'mb-3',
             utilities
         ]"
     >

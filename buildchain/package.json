@@ -25,7 +25,8 @@
         "tailwindcss": "^3.0.0",
         "tiny-cookie": "^1.0.1",
         "typesense": "^1.5.3",
-        "vue": "^3.2.21"
+        "vue": "^3.2.21",
+        "vue3-click-away": "^1.2.4"
     },
     "description": "Percipio.London brand website",
     "devDependencies": {

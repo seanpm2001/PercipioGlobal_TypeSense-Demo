@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useSchoolsStore } from '@/js/pinia/schools'
 import { Facet } from '@/js/interfaces/schools'
 
 interface Props {
     filter: Facet
 }
 
-const expanded = ref(false)
-
 const props = defineProps<Props>()
+
+const schoolStore = useSchoolsStore()
+const { filters } = storeToRefs(schoolStore)
+const expanded = ref(false)
 
 const legend = computed(() => {
     return (props.filter.field_name.charAt(0).toUpperCase() + props.filter.field_name.slice(1)).replace(/([A-Z])/g, ' $1').trim()
@@ -16,6 +20,15 @@ const legend = computed(() => {
 
 const onToggle = () => {
     expanded.value = !expanded.value
+}
+
+const onFilterUpdate = value => {
+    schoolStore.setFilters(props.filter.field_name, value)
+}
+
+const onChecked = value => {
+    const filteredValues = filters.value[props.filter.field_name].values ?? []
+    return filteredValues.indexOf(value) > -1
 }
 </script>
 <template>
@@ -71,10 +84,14 @@ const onToggle = () => {
                     :key="item.value"
                     :class="i > 5 && !expanded ? 'hidden' : ''"
                 >
-                    <label class="flex items-center px-2 font-primary text-sm">
+                    <label 
+                        class="flex items-center px-2 font-primary text-sm"
+                    >
                         <input
-                            :v-model="item.value"
-                            type="checkbox" 
+                            :checked="onChecked(item.value)"
+                            :aria-checked="onChecked(item.value) ? 'true' : 'false'"
+                            @input="() => onFilterUpdate(item.value)"
+                            type="checkbox"
                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         >
                         <span class="ml-3 min-w-0 flex-1 flex-1 text-gray-500">

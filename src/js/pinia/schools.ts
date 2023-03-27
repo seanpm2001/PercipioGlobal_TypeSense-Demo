@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { useSearchParameters, useTypesenseClient } from '../composables/typesense'
-import { SchoolsState, Hit, Coords } from '../interfaces/schools'
+import { SchoolsState, Hit, Coords, Filters } from '../interfaces/schools'
 
 export const useSchoolsStore = defineStore('schools', {
     state: (): SchoolsState => ({
@@ -26,7 +26,7 @@ export const useSchoolsStore = defineStore('schools', {
             },
             geoLocation: {
                 field: 'geolocation',
-                values: [],
+                values: '',
                 combination: '&&'
             }          
         },
@@ -39,6 +39,7 @@ export const useSchoolsStore = defineStore('schools', {
         },
         totalPages: 0,
         totalResults: 0,
+        meta: ''
     }),
     persist: true,
     actions: {
@@ -51,14 +52,6 @@ export const useSchoolsStore = defineStore('schools', {
             const client = useTypesenseClient()
             const searchParameters = useSearchParameters(this.filters, this.sorting)
 
-            // if(coords) {
-            //     this.sorting.type = `geolocation(${coords.latitude},${coords.longitude})`
-            //     this.sorting.order = 'asc'
-                
-            //     // @TODO set this as a filter
-            //     // searchParameters['filter_by'] = `geolocation:(${coords.latitude},${coords.longitude}, 300 km)`
-            // }
-
             // reset for new query or add up for paginations
             if(!reset) {
                 this.currentPage += 1
@@ -67,6 +60,14 @@ export const useSchoolsStore = defineStore('schools', {
                 this.totalPages = 0
                 this.totalResults = null
             }
+
+            console.log({
+                facet_by: 'localAuthority,schoolType',
+                max_facet_values: 100,
+                per_page: this.limit,
+                page: this.currentPage,
+                ...searchParameters,
+            })
 
             await client
                 .collections(this.index)
@@ -83,6 +84,7 @@ export const useSchoolsStore = defineStore('schools', {
                     this.currentPage = results.page
                     this.totalPages = Math.ceil(results.found / this.limit)
                     this.totalResults = results.out_of
+                    this.meta = `${ results.found } results found from ${ results.out_of } docs in ${ results.search_time_ms }ms`
 
                     if (results.hits) {
                         const hits: Array<Hit> = results.hits
@@ -97,6 +99,52 @@ export const useSchoolsStore = defineStore('schools', {
 
                     this.events.LOADING = false
                 })
+        },
+
+        setSort(type: string) {
+            if(type === this.filters.geoLocation.field) {
+                this.sorting.type = `${type}(${this.coords.latitude}, ${this.coords.longitude})`
+            } else {
+                this.sorting.type = type
+            }
+
+            this.fetch()
+        },
+
+        setSearch(search: string) {
+            this.filters.searchQuery = search
+            this.fetch()
+        },
+
+        setFilters(type: keyof Filters, value: string) {
+            if (this.filters[type]?.values.indexOf(value) < 0) {
+                this.filters[type].values.push(value)
+            } else {
+                this.filters[type].values = this.filters[type].values.filter(item => item !== value)
+            }
+
+            this.setFiltersQuery()
+            this.fetch()
+        },
+
+        setFiltersQuery() {
+            this.filters.filterQuery = ''
+
+            if (this.filters.localAuthority.values.length > 0) {
+                this.filters.filterQuery += this.filters.localAuthority.field + ':=[' + "`" + this.filters.localAuthority.values.join("`,`") + "`" + '] ' + this.filters.localAuthority.combination + ' '
+            }
+
+            if (this.filters.schoolType.values.length > 0) {
+                this.filters.filterQuery += this.filters.schoolType.field + ':=[' + "`" + this.filters.schoolType.values.join("`,`") + "`" + '] ' + this.filters.schoolType.combination + ' '
+            }
+
+            if (this.filters.geoLocation.values.length > 0) {
+                this.filters.filterQuery += `${this.filters.geoLocation.field}:=(${this.coords.latitude},${this.coords.longitude}, ${this.filters.geoLocation.values} km) ${this.filters.geoLocation.combination}`
+            }
+
+            this.filters.filterQuery = this.filters.filterQuery.substring(0, this.filters.filterQuery.lastIndexOf(' && '))
+
+            // this.filters.filterQuery = 'localAuthority:=[`Milton Keynes`,`North West Leicestershire`] && schoolType:=[`Childcare on non-domestic premises`]'
         },
         
         // async fetchGeo(reset = true, coords: any) {

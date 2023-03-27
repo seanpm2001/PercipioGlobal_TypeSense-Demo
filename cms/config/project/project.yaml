@@ -1,4 +1,4 @@
-dateModified: 1679204819
+dateModified: 1679940566
 elementSources:
   craft\elements\Entry:
     -
@@ -575,7 +575,7 @@ plugins:
     schemaVersion: '2.0'
   blitz:
     edition: standard
-    enabled: true
+    enabled: false
     licenseKey: $PLUGIN_BLITZ
     schemaVersion: 4.4.0
     settings:
@@ -693,7 +693,7 @@ plugins:
       sendPoweredByHeader: false
   blitz-recommendations:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 2.1.0
   colour-swatches:
     enabled: true
@@ -779,7 +779,7 @@ plugins:
     schemaVersion: 2.3.0
   retour:
     edition: standard
-    enabled: true
+    enabled: false
     licenseKey: $PLUGIN_RETOUR
     schemaVersion: 3.0.11
   seomatic:

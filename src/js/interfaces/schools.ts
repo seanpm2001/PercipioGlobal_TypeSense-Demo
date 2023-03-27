@@ -45,7 +45,7 @@ export interface Queries extends Filters {
 
 export interface Filter {
     field: string,
-    values: Array<string>
+    values: Array<string> | string
     combination: string
 }
 
@@ -66,7 +66,7 @@ export interface Sort {
     order: string,
 }
 
-interface Coords {
+export interface Coords {
     latitude: string,
     longitude: string
 }
@@ -83,4 +83,5 @@ export interface SchoolsState {
     sorting: Sort
     totalPages: number | null
     totalResults: number | null
+    meta: string
 }
