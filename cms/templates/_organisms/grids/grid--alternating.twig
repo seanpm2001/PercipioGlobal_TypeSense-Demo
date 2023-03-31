@@ -1,0 +1,109 @@
+{%- import '_macros/atoms' as render -%}
+
+{%- set items = items ??? [] -%}
+{%- set utilities = utilities ??? ''-%}
+
+{%- minify -%}
+
+    <section class="overflow-hidden {{ utilities -}}">
+
+        <div aria-hidden="true" class="container max-w-screen-xl mx-auto my-12 relative">
+
+            {# mobile / tablet #}
+            <div class="lg:hidden sm:columns-2 lg:columns-auto lg:grid lg:grid-cols-3 gap-4 w-full mb-4">
+                {%- for item in items -%}
+
+                    {%- set smallOnLeft = loop.index % 2 == 0 -%}
+                    {%- set firstRow = loop.first -%}
+                    {%- set lastRow = loop.last -%}
+
+                    <div class="backdrop-blur-sm bg-black/25 border border-slate-700 text-white break-inside-avoid mb-4 rounded-2xl overflow-hidden">
+                        <line--top :delayed="{{- loop.index % 2 == 0 ? 'true' : 'false' -}}"></line--top>
+                        <line--bottom color="pink" :delayed="{{- loop.index % 2 == 0 ? 'true' : 'false' -}}"></line--bottom>
+
+                        {%- if item.gridItem.getType() == 'entry' -%}
+
+                            {%- switch item.gridItem.getElement().type -%}
+                                {%- case 'text' -%}
+                                    {%- include '_molecules/grid-items/grid-item--text' ignore missing with {
+                                        item: item.gridItem.getElement(),
+                                        size: 'small',
+                                    } -%}
+                                {%- case 'textAndImage' -%}
+                                    {%- include '_molecules/grid-items/grid-item--text-image' ignore missing with {
+                                        item: item.gridItem.getElement(),
+                                        size: 'small',
+                                    } -%}
+                            {%- endswitch -%}
+                            
+                        {%- else -%}
+
+                            {%- include '_molecules/grid-items/grid-item--image-small' ignore missing with {
+                                image: item.gridItem.getElement(),
+                                utilities: 'mt-8 md:mt-0'
+                            } -%}
+
+                        {%- endif -%}
+                    </div>
+
+            {%- endfor -%}
+
+        </div>
+
+        {# desktop #}
+        <div class="hidden lg:block my-12 relative">
+            {%- for row in items|batch(2) -%}
+
+                {%- set smallOnLeft = loop.index % 2 == 0 -%}
+                {%- set firstRow = loop.first -%}
+                {%- set lastRow = loop.last -%}
+
+                <div class="sm:columns-2 lg:columns-auto lg:grid lg:grid-cols-3 gap-4 w-full mb-4">
+                    {%- for item in row -%}
+                        <div class="
+                            backdrop-blur-sm bg-black/25 border border-slate-700
+                            {{ firstRow and loop.first ? 'rounded-tl-2xl' : '' }}
+                            {{ firstRow and loop.last ? 'rounded-tr-2xl' : '' }}
+                            {{ lastRow and loop.first ? 'rounded-bl-2xl' : '' }}
+                            {{ lastRow and loop.last ? 'rounded-br-2xl' : '' }}
+                            {{ smallOnLeft ? (loop.first ? 'lg:col-span-2' : '') : (loop.last ? 'lg:col-span-2' : '') -}}
+                        ">
+                            <line--top :delayed="{{- loop.index % 2 == 0 ? 'true' : 'false' -}}"></line--top>
+                            <line--bottom color="pink" :delayed="{{- loop.index % 2 == 0 ? 'true' : 'false' -}}"></line--bottom>
+
+                            {%- if item.gridItem.getType() == 'entry' -%}
+
+                                {%- switch item.gridItem.getElement().type -%}
+                                    {%- case 'text' -%}
+                                        {%- include '_molecules/grid-items/grid-item--text' ignore missing with {
+                                            item: item.gridItem.getElement(),
+                                            size: 'small',
+                                            utilities: 'h-full'
+                                        } -%}
+                                    {%- case 'textAndImage' -%}
+                                        {%- include '_molecules/grid-items/grid-item--text-image' ignore missing with {
+                                            item: item.gridItem.getElement(),
+                                            size: 'small',
+                                            utilities: 'h-full'
+                                        } -%}
+                                {%- endswitch -%}
+                                
+                            {%- else -%}
+
+                                {%- include '_molecules/grid-items/grid-item--image-small' ignore missing with {
+                                    image: item.gridItem.getElement(),
+                                    utilities: 'mt-8 md:mt-0'
+                                } -%}
+
+                            {%- endif -%}
+                        </div>
+                    {%- endfor -%}
+                </div>
+
+            {%- endfor -%}
+
+        </div>
+
+    </section>
+
+{%- endminify -%}

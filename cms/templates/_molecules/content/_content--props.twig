@@ -8,7 +8,9 @@
 
 {%- set props = {
     content: content ??? null,
+    headingSize: headingSize ??? 'h2',
     utilities: utilities ??? null,
+    animate: animate ?? true,
 } -%}
 
 {% block copy %}

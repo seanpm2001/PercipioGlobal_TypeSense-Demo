@@ -33,7 +33,7 @@ const ANIMATIONS: Animations = {
 
 //instanciate init
 export const init = () => {
-    let ticking = false;
+    let ticking = false
     const animateElements: NodeListOf<HTMLElement> = document.querySelectorAll('.animate')
 
     setInitialAnimations(animateElements)
@@ -41,14 +41,15 @@ export const init = () => {
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                animateBlocks(animateElements);
-                ticking = false;
-            });
+                animateBlocks(animateElements)
 
-            ticking = true;
+                ticking = false
+            })
+
+            ticking = true
         }
 
-    });
+    })
 }
 
 const setInitialAnimations = (animateElements: NodeListOf<HTMLElement>) => {
@@ -58,7 +59,7 @@ const setInitialAnimations = (animateElements: NodeListOf<HTMLElement>) => {
         block.classList.add(...animation.initial, ...animation.out)
     }
 
-    animateBlocks(animateElements);
+    animateBlocks(animateElements)
 }
 
 const animateBlocks = (animateElements: NodeListOf<HTMLElement>) => {

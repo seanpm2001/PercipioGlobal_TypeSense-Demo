@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: docs
+name: Docs
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  5da841b1-ca0d-46ff-8bb1-04d6c889ac54: # Percipio
+    enabledByDefault: true
+    hasUrls: true
+    template: _organisms/page.twig
+    uriFormat: 'docs/{parent.uri ?? parent.uri}/{slug}'
+structure:
+  maxLevels: 2
+  uid: 4600a75e-a9bd-4b27-96e1-4d489f22baa5
+type: structure

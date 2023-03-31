@@ -1,0 +1,47 @@
+{%- extends '_molecules/grid-items/_grid-item--props' -%}
+{%- import '_macros/atoms' as render -%}
+
+{%- set item = item ??? null -%}
+{%- set size = size ??? 'large' -%}
+{%- set utilities = utilities ??? '' -%}
+
+{%- block grid -%}
+
+    {%- minify -%}
+
+        <article class="lg:grid grid-cols-2 overflow-hidden {{ utilities -}}">
+
+            <div class="px-10 lg:pl-10 {{ size == 'large' ? 'py-20' : 'py-10' }}">
+                <span class="block h-10">
+                    {%- include 'svgs/' ~ item.icon ~ '.svg' -%}
+                </span>
+
+                <h1 class="pt-6">
+                    {{- render.atom('text', 'h2', {
+                        content: item.title ??? '',
+                        utilities: 'text-white'
+                    }) -}}
+                </h1>
+
+                <div class="pt-6 font-primary text-white text-base">
+                    {{- item.body | typogrify(true) -}}
+                </div>
+            </div>
+
+            <div class="pl-10">
+                <div class="relative w-full h-full">
+                    {{- render.atom('image', 'article', {
+                        image: item.gridImage.collect().one() ??? null,
+                        sizes: ['50vw', '100vw'],
+                        alt: item.gridImage.collect().one().title ??? null,
+                        placeholders: placeholders,
+                        utilities: 'w-full',
+                        parentUtilities: 'w-full lg:absolute left-0 bottom-0 w-full shadow-2xl shadow-slate-400/50'
+                    }) -}}
+                </div>
+            </div>
+
+        </article>
+    {%- endminify -%}
+
+{%- endblock -%}

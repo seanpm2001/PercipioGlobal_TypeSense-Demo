@@ -19,20 +19,15 @@
 {# -- General global variables -- #}
 {%- set baseUrl = alias('@web') ~ '/' -%}
 {%- set assetsUrl = alias('@assetsUrl') ~ '/' -%}
-{%- set gtmTrackingId = getenv('TM_TRACKING_ID') -%}
-
 
 {%- set placeholders = craft.globalSets()
     .handle('placeholders')
     .with([
         'articlePlaceholder',
-        'cardPlaceholder',
-        'defaultPlaceholder',
-        'galleryPlaceholder',
-        'gridPlaceholder',
+        'teaserPlaceholder'
     ])
     .collect()
-    .first()
+    .one()
 -%}
 
 {%- set footerData = craft.globalSets()
@@ -42,7 +37,7 @@
         'locations',
     ])
     .collect()
-    .first()
+    .one()
 -%}
 
 {%- set branding = craft.globalSets()

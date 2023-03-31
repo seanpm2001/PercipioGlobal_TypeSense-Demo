@@ -1,1 +1,7 @@
-<view--demo></view--demo>
+<div id="page-demo-container">
+    <view--demo></view--demo>
+</div>
+
+{% block bodyJs %}
+    {{ craft.vite.script("src/js/modules/page-demo.ts", true) }}
+{% endblock bodyJs %}

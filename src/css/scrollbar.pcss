@@ -1,0 +1,11 @@
+.scrollbar-hide{
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    height: 0;
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    display: none;  /* Safari and Chrome */
+}

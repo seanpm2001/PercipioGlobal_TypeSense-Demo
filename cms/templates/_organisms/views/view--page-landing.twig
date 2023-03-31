@@ -1,7 +1,20 @@
-{%- include '_organisms/builders/builder--header' ignore missing with {
-    content: entry,
+{% do craft.eagerBeaver.eagerLoadElements(entry, [
+    'hero:target',
+    ])
+%}
+
+{%- include '_organisms/heroes/hero--primary' ignore missing with {
+    heading: entry.hero.collect().one().heading ??? entry.title ??? '',
+    description: entry.hero.collect().one().description ??? '',
+    button: entry.hero.collect().one().target ??? null
 } -%}
 
-{%- include '_organisms/builders/builder--page' with {
-    content: entry,
-} -%}
+<div id="page-landing-container">
+    {%- include '_organisms/builders/builder--page' with {
+        content: entry,
+    } -%}
+</div>
+
+{% block bodyJs %}
+    {{ craft.vite.script("src/js/modules/page-landing.ts", true) }}
+{% endblock bodyJs %}

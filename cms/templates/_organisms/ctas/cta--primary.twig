@@ -1,0 +1,86 @@
+{%- extends '_organisms/ctas/_cta--props' -%}
+{%- import '_macros/atoms' as render -%}
+
+{%- block cta -%}
+
+    {%- set classes = {
+        '_default': 'relative',
+        'background': 'bg-slate-900/20 backdrop-blur-sm',
+        'border': 'rounded-2xl border border-slate-700',
+        'spacing': 'my-12',
+    } -%}
+
+    {%- minify -%}
+    
+        <section class="container max-w-screen-xl mx-auto">
+            <div class="
+                {{- classes._default }}
+                {{ classes.background }}
+                {{ classes.border }}
+                {{ classes.spacing -}}
+            ">
+
+                <line--top></line--top>
+                <line--bottom color="pink"></line--bottom>
+
+                <div class="rounded-2xl overflow-hidden">
+                    {# Gradient animation on bottom #}
+                    <div class="absolute right-[13px] -bottom-px h-px w-[calc(100%-26px)] background-gradient-pink background-animate background-animate-reverse pointer-events-none">
+                        <div class="absolute left-0 bottom-0 h-px w-1/5 bg-gradient-to-r from-slate-700 to-transparant"></div>
+                        <div class="absolute right-0 bottom-0 h-px w-1/5 bg-gradient-to-l from-slate-700 to-transparant"></div>
+                    </div>
+
+                    <div class="p-px relative z-10 w-full h-full">
+                        <article class="w-full rounded-xl py-20 p-10 bg-slate-900/20 relative">
+                            <div class="container mx-auto sm:mx-0 lg:mx-auto w-full px-0 sm:w-3/4 lg:w-2/4 text-center sm:text-left lg:text-center">
+                                <h1>
+                                    {{- render.atom('text', 'title', {
+                                        content: props.heading ??? '',
+                                        utilities: 'text-white'
+                                    }) -}}
+                                </h1>
+
+                                <div class="pt-6">
+                                    {{- render.atom('text', 'description', {
+                                        content: props.content ??? '',
+                                        utilities: 'text-white'
+                                    }) -}}
+                                </div>
+
+                                {%- if props.button ??? null -%}
+                                    <div class="pt-6">
+                                        {{- render.atom('button', 'primary', {
+                                            url: props.button.url ??? null,
+                                            text: props.button.title ??? null,
+                                            target: '_self',
+                                            ga: {
+                                                action: 'click',
+                                                category: 'cta',
+                                                label: props.button.title ??? 'Cta',
+                                                type: 'cta-primary'
+                                            },
+                                            utilities: 'my-2 md:my-0 ' ~ (not loop.last ? 'mr-2' : '')
+                                        }) -}}
+                                    </div>
+                                {%- endif -%}
+                            </div>
+
+                            {# Blobs #}
+                            {%- set blobVersion = random([1,2]) -%}
+                            
+                            <div class="hidden sm:block absolute -right-1/4 -top-5 w-2/4 h-full">
+                                {%- include 'svgs/blue.svg' -%}
+                            </div>
+                            
+                            <div class="hidden sm:block absolute -right-1/4 -bottom-5 w-2/4">
+                                {%- include 'svgs/pink.svg' -%}
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {%- endminify -%}
+
+{%- endblock -%}

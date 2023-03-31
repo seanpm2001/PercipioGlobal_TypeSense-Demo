@@ -1,0 +1,53 @@
+{%- import '_macros/atoms' as render -%}
+
+{% do craft.eagerBeaver.eagerLoadElements(entry, [
+    'hero:target',
+    ])
+%}
+
+<div id="page-docs-container" class="container max-w-screen-xl mx-auto flex pt-32 relative">
+
+    <navigation--docs></navigation--docs>
+
+    <div id="docs-navigation-skeleton" class="pl-4 md:block text-white pr-4 md:pl-0 md:h-auto min-w-[250px] w-1/4">
+        <ul>
+            <li class="font-primary mb-4">
+                <div class="bg-slate-600 h-4 w-3/5 rounded-2xl animate-pulse opacity-80"></div>
+
+                <ul class="mt-4 border-l border-slate-700">
+                    <li class="pl-4 py-2">
+                        <div class="bg-slate-600 h-4 w-3/4 rounded-2xl animate-pulse opacity-80"></div>
+                    </li>
+                    <li class="pl-4 py-2">
+                        <div class="bg-slate-600 h-4 w-3/5 rounded-2xl animate-pulse opacity-80"></div>
+                    </li>
+                </ul>
+            </li>
+            <li class="font-primary mb-4">
+                <div class="bg-slate-600 h-4 w-4/5 rounded-2xl animate-pulse opacity-80"></div>
+
+                <ul class="mt-4 border-l border-slate-700">
+                    <li class="pl-4 py-2">
+                        <div class="bg-slate-600 h-4 w-1/2 rounded-2xl animate-pulse opacity-80"></div>
+                    </li>
+                    <li class="pl-4 py-2">
+                        <div class="bg-slate-600 h-4 w-3/4 rounded-2xl animate-pulse opacity-80"></div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <main class="text-white grow pl-6 md:pl-0">
+        <h1 class="font-primary text-white print:text-black print:text-lg print:leading-6 break-avoid mb-5 doc-heading" id="doc-{{ entry.title|kebab }}">
+            {{- render.atom('text', 'h2', { content: entry.title }) -}}
+        </h1>
+        {%- include '_organisms/builders/builder--docs' with {
+            content: entry,
+        } -%}
+    </main>
+</div>
+
+{% block bodyJs %}
+    {{ craft.vite.script("src/js/modules/page-docs.ts", true) }}
+{% endblock bodyJs %}

@@ -4,10 +4,6 @@
 
     icon: (Asset) - the SVG asset
     utlities: (STR) - the icon utilities
-
-    ### FUNCTIONS ###
-    -----------------
-    ga: parse google analytics attributes
 #}
 
 {%- set props = {
@@ -15,8 +11,9 @@
     utilities: options.utilities ??? null,
 } -%}
 
-{%- if props.icon and props.icon.extension == 'svg' -%}
+{%- if props.icon -%}
     <div class="{{- props.utilities -}}">
         {{- svg(props.icon, sanitize=false, namespace=false) |attr({ class: 'w-full' }) -}}
+        {# {%- include 'svgs/' ~ props.icon ~ '.svg' -%} #}
     </div>
 {%- endif -%}

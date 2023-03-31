@@ -1,30 +1,27 @@
-
 import App from '@/vue/App.vue'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-import VueClickAway from "vue3-click-away"
+import VueCodeHighlight from 'vue-code-highlight'
 
+// Import font awesome icons
 import './assets/icons'
 
 // Import our CSS
-import '@/css/app.pcss';
+import '@/css/app.pcss'
 
 // App main
 const main = async () => {
     const pinia = createPinia()
-    pinia.use(piniaPluginPersistedstate)
-
     const app = createApp(App)
-    app.use(pinia)
-    app.use(VueClickAway)
 
-    return app.mount('#page-container')
+    app.use(pinia)
+    app.use(VueCodeHighlight)
+
+    return app.mount('#app-container')
 }
 
 // Execute async function
-main().then( () => {
+main().then(() => {
     console.log()
 })
 

@@ -1,0 +1,73 @@
+fieldLayouts:
+  89f532bd-831c-4196-9270-ec07909069cb:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 0f700006-ce3c-4e7a-a929-d1100c0bc32b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 25a7de28-66b5-4a4d-a909-6c20b7468030 # Docs Builder
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 19f49711-debf-41a7-a4a5-24e887b8372f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fab3f622-d51f-4b02-864a-1c814f52e1a2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6a3feb81-50ce-467a-8aca-b5d4cc12aed0 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 16552bfd-0cf5-47c9-9cd5-4f0bfad9e994
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: 71ce4abb-0b83-4085-b71a-9251b0dcf088
+        userCondition: null
+handle: docs
+hasTitleField: true
+name: Docs
+section: c9644189-4157-435a-a889-60c6e6812769 # Docs
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

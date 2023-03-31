@@ -1,0 +1,43 @@
+{%- extends '_molecules/quotes/_quote--props' -%}
+{%- import '_macros/atoms' as render -%}
+
+{%- block quote -%}
+
+    {%- set classes = {
+        '_default': 'w-full max-w-[80ch] mb-5 md:mb-10',
+        'background': 'bg-metaseed-blue-500/10 border border-metaseed-blue-500/30 rounded-2xl',
+        'font': 'font-primary text-base',
+        'padding': 'p-5',
+    } -%}
+
+    {%- minify -%}
+
+        <blockquote class="
+            {{- classes._default }}
+            {{ classes.background }}
+            {{ classes.font }}
+            {{ classes.padding }}
+        ">
+
+            <div class="{{- props.animate ? 'animate' : '' }} flex" data-animation="slideBottomToTop">
+
+                <div class="grow-0 shrink-0 pr-3 pt-1">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 9V11" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 6C8.55228 6 9 5.55228 9 5C9 4.44772 8.55228 4 8 4C7.44772 4 7 4.44772 7 5C7 5.55228 7.44772 6 8 6Z" fill="#F8FAFC"/>
+                        <path d="M8 15.25C12.0041 15.25 15.25 12.0041 15.25 8C15.25 3.99594 12.0041 0.75 8 0.75C3.99594 0.75 0.75 3.99594 0.75 8C0.75 12.0041 3.99594 15.25 8 15.25Z" stroke="#F8FAFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="text-white">
+                    {{- render.atom('text', 'content', {
+                        content: props.content
+                    }) -}}
+                </div>
+
+            </div>
+
+        </blockquote>
+
+    {%- endminify -%}
+{%- endblock -%}

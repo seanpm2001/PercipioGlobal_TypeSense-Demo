@@ -1,17 +1,17 @@
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import legacy from '@vitejs/plugin-legacy'
 import ViteRestart from 'vite-plugin-restart'
+import { partytownVite } from '@builder.io/partytown/utils';
 import viteCompression from 'vite-plugin-compression'
-import manifestSRI from 'vite-plugin-manifest-sri'
-import {visualizer} from 'rollup-plugin-visualizer'
+import { visualizer } from 'rollup-plugin-visualizer'
 import eslintPlugin from 'vite-plugin-eslint'
-import {nodeResolve} from '@rollup/plugin-node-resolve'
-import {ViteFaviconsPlugin} from 'vite-plugin-favicon2'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import { ViteFaviconsPlugin } from 'vite-plugin-favicon2'
 import * as path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig(({command}) => ({
+export default defineConfig(({ command }) => ({
     base: command === 'serve' ? '' : '/dist/',
     build: {
         emptyOutDir: true,
@@ -20,11 +20,17 @@ export default defineConfig(({command}) => ({
         rollupOptions: {
             input: {
                 app: './src/js/app.ts',
+                footer: './src/js/modules/footer.ts',
+                hero: './src/js/modules/hero.ts',
+                navigation: './src/js/modules/navigation.ts',
+                'page-docs': './src/js/modules/page-docs.ts',
+                'page-demo': './src/js/modules/page-demo.ts',
+                'page-landing': './src/js/modules/page-landing.ts',
                 'lazysizes-wrapper': './src/js/utils/lazysizes-wrapper.ts',
             },
-            output: {
-                sourcemap: true
-            },
+            // output: {
+            //     sourcemap: true
+            // },
         }
     },
     plugins: [
@@ -46,15 +52,17 @@ export default defineConfig(({command}) => ({
                 './src/templates/**/*',
             ],
         }),
+        partytownVite({
+            dest: path.resolve('../cms/web/dist/', '~partytown'),
+        }),
         vue(),
         viteCompression({
             filter: /\.(js|mjs|json|css|map)$/i
         }),
-        manifestSRI(),
         visualizer({
             filename: '../src/web/dist/assets/stats.html',
             template: 'treemap',
-            sourcemap: true,
+            // sourcemap: true,
         }),
         eslintPlugin({
             cache: false,

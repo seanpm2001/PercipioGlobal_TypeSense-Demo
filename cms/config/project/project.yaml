@@ -1,4 +1,4 @@
-dateModified: 1679940566
+dateModified: 1680263899
 elementSources:
   craft\elements\Entry:
     -
@@ -34,14 +34,36 @@ elementSources:
       heading: Channels
       type: heading
     -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:c9644189-4157-435a-a889-60c6e6812769' # Docs
+      tableAttributes:
+        - type
+        - link
+      type: native
+    -
       heading: Misc
       type: heading
     -
       heading: Typsense
       type: heading
     -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
       key: 'section:82486ff8-8d32-4b90-9828-8a12d879b242' # Schools
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
       type: native
+    -
+      heading: ''
+      type: heading
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SENDER_NAME
@@ -64,7 +86,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: animations/
+      subfolder: typesense/animations/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   articles:
@@ -83,7 +105,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: articles/
+      subfolder: typesense/articles/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   cards:
@@ -102,7 +124,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: cards/
+      subfolder: typesense/cards/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   ctas:
@@ -121,7 +143,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: ctas/
+      subfolder: typesense/ctas/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   gallery:
@@ -140,7 +162,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: gallery/
+      subfolder: typesense/gallery/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   grids:
@@ -159,7 +181,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: grid50/
+      subfolder: typesense/grid50/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   heroGraphics:
@@ -178,7 +200,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: hero-graphics/
+      subfolder: typesense/hero-graphics/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   icons:
@@ -197,7 +219,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: icons/
+      subfolder: typesense/icons/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   media:
@@ -216,7 +238,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: media/
+      subfolder: typesense/media/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
   og:
@@ -235,7 +257,7 @@ fs:
       region: $S3_REGION
       secret: $S3_SECRET
       storageClass: ''
-      subfolder: og-images/
+      subfolder: typesense/og-images/
     type: craft\awss3\Fs
     url: $CLOUDFRONT_URL
 meta:
@@ -246,6 +268,7 @@ meta:
     0f190264-3cec-4937-a868-923e009164cf: Header # Header
     0fb24d65-ce08-439c-b873-e060e2797035: 'Hero Secondary' # Hero Secondary
     0ffda005-8eda-4a54-bafa-0b39cafbc863: Overline # Overline
+    1a7476bb-1507-4c09-a202-a2b2348e58e7: Code # Code
     1a84863b-861a-4293-b8ca-c88d90b87ae8: 'Card Placeholder' # Card Placeholder
     01b78fde-8a32-4ecc-b1b0-abf0661898ce: Skills # Skills
     1b99a854-98db-4e61-b98d-3c4e357b1e85: Containerise # Containerise
@@ -255,6 +278,7 @@ meta:
     1caabc75-eb3c-43a5-bffd-5b3289015e5c: Heading # Heading
     1cc6350b-c0ba-4f7f-8034-dbcec8643016: Filename # Filename
     1cd525bc-8beb-4ba2-9452-2e02803421ef: 'Video Placeholder' # Video Placeholder
+    1d8a3729-bec1-490a-ad7c-4fb600dafadb: Snippet # Snippet
     1d22d2ae-5175-4154-b830-51c806bfbf5b: 'Article Body' # Article Body
     01d80304-2955-464a-afeb-6b88f964b51b: 'Local Authority (slug)' # Local Authority (slug)
     1dd95078-7c8a-4ef7-8a16-e33a5341dadb: 'Image Optimisations ' # Image Optimisations 
@@ -278,7 +302,9 @@ meta:
     3ef3485e-6187-4dac-af6b-66d630852b61: Quote # Quote
     3f37c536-3682-4856-a6af-a9f582d4c782: Style # Style
     3fc84cf5-6e3d-46e8-bf13-9a1d4e198438: Caption # Caption
+    3fcd1551-0a7b-452d-ac70-189fec27de1e: 'Body Content' # Body Content
     4a86f07d-200e-4dbc-a06a-223d9cc5c049: Images # Images
+    4b3e8703-efeb-499f-8d25-60f936707744: Heading # Heading
     4be4bd14-ce94-450b-a4f4-e10721ba5b22: Containerise # Containerise
     4d23d076-4a7c-4ad8-969e-ca980aef3815: 'Social Media Type' # Social Media Type
     4dfa8799-f095-4bd8-a821-1fb376db0278: Grids # Grids
@@ -309,6 +335,7 @@ meta:
     8aa79663-4f9b-4c0e-8f3c-6fd1ff521de6: 'Hero Primary' # Hero Primary
     8c9be2b5-73bf-4f32-8fd2-fc36a109dbab: 'Default Optimisations' # Default Optimisations
     8ce2faf2-a20a-4547-8145-4e3f9e75eb87: 'Blog Categories' # Blog Categories
+    8d93fcba-dc72-4320-a789-798070e035dd: Heading # Heading
     8dadf0c6-9868-4783-ad0e-1625a2a2b7f6: Overline # Overline
     8f7046bb-5261-4213-9d49-b1244e5d458e: 'Grid Placeholder' # Grid Placeholder
     8fd7bfc7-70cd-498d-9229-a507c11afc58: 'Inline Quote' # Inline Quote
@@ -317,6 +344,7 @@ meta:
     9c4ff5ca-6227-465d-a4a9-5a584eba02b4: 'Body Content' # Body Content
     9ea88c8c-ff9b-40b0-94d4-e7eb1b8227a6: 'Hero Optimisations' # Hero Optimisations
     9ecea484-fe9d-4944-8519-dee7181de25c: Alignment # Alignment
+    9f781945-8e95-4aa1-bd06-0e917cb62bb9: Info # Info
     10a7e511-e02a-46ff-8524-7390d3e9be19: Client # Client
     10bd70ab-fb15-4522-a40e-e59b82bb493d: County # County
     11cd00ae-7392-488f-b7d5-f0116379c7ed: Employees # Employees
@@ -325,6 +353,7 @@ meta:
     17a904c0-8155-41ee-bcd8-915ad0b0bc70: Region # Region
     020d5ff3-f24f-48ae-bd4c-ad2beb6b4d8b: Heading # Heading
     24fd51e7-3c4a-4991-89c1-290d5c79408c: 'Logo Position' # Logo Position
+    25a7de28-66b5-4a4d-a909-6c20b7468030: 'Docs Builder' # Docs Builder
     28eeceba-0a90-4920-85a2-1bc8eb49f094: 'Grid Content Image - 50% background' # Grid Content Image - 50% background
     29d259da-2846-455c-b5ab-ed43e74ae7fa: 'Text Size' # Text Size
     31c5270d-1393-4081-ac23-419af7b7b991: Button # Button
@@ -344,6 +373,7 @@ meta:
     54e8b29b-128e-4e68-a79a-181317cc51df: Animation # Animation
     54e60257-f31a-44aa-960e-bbd364197e28: Homepage # Homepage
     55ac783b-adeb-42fc-98f5-0adf13a8419d: Width # Width
+    55ba42af-57c6-4cf7-b7d1-4096f041f82a: Language # Language
     55f66155-bf33-4ee8-a9fb-5dc0ad950b75: 'Nomenclature of Territorial Units for Stastics Code' # Nomenclature of Territorial Units for Stastics Code
     056eaad6-b9f8-4337-b984-8bfbbabccb62: Overline # Overline
     57f60bd3-c5a9-461b-ae37-5a637231ab58: Settings # Settings
@@ -357,7 +387,10 @@ meta:
     74d5a128-4fbc-4ea8-a7d7-c828e87680ff: 'Organisation Address Region' # Organisation Address Region
     74ec495a-3fc7-4175-8f94-3ee08302407a: Articles # Articles
     74f6b1ab-d7f2-4df1-89fe-1601cf0697a0: Navigation # Navigation
+    74fa5ee1-9077-42b3-90ae-62007d299902: CTA # CTA
+    79aa2543-9e9e-477e-b006-7bf3d7172a7e: Description # Description
     80a6157c-e287-49ae-a937-228b86f1ffa2: Buttons # Buttons
+    81f635c4-feb8-43c7-8256-ddcaf30d1f86: Heading # Heading
     082e47d2-643f-411e-a751-0d9f915db739: Swatch # Swatch
     83cafeab-7189-4e6a-8d08-62f9e35de063: Content # Content
     85f7ea92-40ac-44bf-b3fe-20f8075fe802: Image # Image
@@ -375,6 +408,7 @@ meta:
     235f6bca-1696-4cae-b788-151de8ea53bf: Image # Image
     247bfb7d-d077-42ee-b2ba-84feb1b3fd19: Content # Content
     277ee149-4961-454b-814c-fffcddc564d6: Animation # Animation
+    280b8574-b8df-436b-b052-db741110ca41: Description # Description
     284e17ab-cd25-417d-8951-fd69b7169e3d: 'Hero Image' # Hero Image
     302a5592-8085-472e-9356-ab6b1eaf1635: Position # Position
     0314e405-e731-462f-9381-2cfb6ac91134: Images # Images
@@ -390,6 +424,7 @@ meta:
     720b0445-dc28-4b47-85df-59e4f03c666b: Button # Button
     749e2008-af5d-44f1-aaa7-b6a982c0978f: Header # Header
     784bd961-34af-4cd9-95b0-388933b25647: Locality # Locality
+    969cbd03-a0e7-4b52-a5c1-0f5f7f385ed0: Parameters # Parameters
     1161e40e-4abd-42f6-ab07-1f1254de17b4: OG # OG
     1189b5a0-da94-4cec-b664-72101830b7c1: Heading # Heading
     1572f461-2a67-47a4-a36c-80839168bcb7: Globals # Globals
@@ -406,6 +441,7 @@ meta:
     5162e4ea-9d64-443b-847d-ef657925e27a: 'Article Optimisations' # Article Optimisations
     5527a397-226d-4a44-a929-1133169e498a: 'Square Gallery Optimisation' # Square Gallery Optimisation
     5926ab26-ed13-4347-80c3-1fbfcd1db6f4: Town # Town
+    6131b812-b367-4709-b662-f333b059d3dc: Image # Image
     6325f925-feea-4e28-b6ec-7630d3e70cc8: Embed # Embed
     6398bf72-eab8-49ad-8949-2dfd557210c8: 'Grid Content Info' # Grid Content Info
     6652c1d5-4d7e-4102-b0d0-7c6133609c09: 'Local Authority' # Local Authority
@@ -434,14 +470,16 @@ meta:
     92164c9b-e1af-4a4e-b639-44a2b5d79bd3: Navigation # Navigation
     93892db5-fbae-4955-92ff-5b51c9962812: Authors # Authors
     209738f8-00a6-45b2-b594-50afccb1662e: 'Image Gallery' # Image Gallery
+    459606e4-8323-473c-8c19-4e707051d324: Snippet # Snippet
     0568325a-5e70-4dde-982d-1cad58a42365: Background # Background
     670882de-3f12-4bfd-b44e-7f5132526ff9: Description # Description
-    827203e4-23bd-4920-a23d-c4dcaad52d5f: Navigation # Navigation
+    827203e4-23bd-4920-a23d-c4dcaad52d5f: Site # Site
     985978cb-f5c1-4dc7-a9d3-4f278773ccff: Caption # Caption
     2075123a-3328-41eb-a8ad-ce1987d26d66: Overline # Overline
     6569339b-0b2b-4801-9b30-7599f28e1a5b: Media # Media
     12994466-6e49-4c20-9577-9d8b8ff8146c: Latitude # Latitude
     18802253-9492-45f9-94a3-1d4c9b68c027: Swatch # Swatch
+    22980558-2bd5-4cd7-88cb-1def2b5ead0a: Image # Image
     26759232-9c46-43b6-9279-f62bb6e4cf85: Heading # Heading
     60285741-d9e6-4e21-b26e-3330c2d02f47: Name # Name
     61518518-d14c-4402-a480-c059af3b7087: Buttons # Buttons
@@ -449,6 +487,7 @@ meta:
     76099428-f3d4-42a7-9bb8-08f425b41461: 'Organisation Name' # Organisation Name
     81626649-c471-4036-8abc-aa48cc1f1973: Latitude # Latitude
     98769057-9c93-4e96-89ff-cb7b6a3a1188: 'Secondary Navigation' # Secondary Navigation
+    98917994-bbbe-4ccb-a18f-d046e1e20b9e: Heading # Heading
     a5be1b28-c12a-4a3c-8bf6-8cddef930108: Heading # Heading
     a5cb77be-c4d9-4d3e-88fb-d5384ca13941: 'Error Image' # Error Image
     a6d05f0a-f046-4a8d-bddd-dd368b675507: Content # Content
@@ -458,6 +497,7 @@ meta:
     a81ab3c0-c52b-4817-8820-c0e69e9a0d2d: Containerise # Containerise
     a938d5bd-b3b8-48ed-b083-099f57f60c16: 'Hero Graphic' # Hero Graphic
     a1477b0f-3339-4cae-8768-625b7fe98d6a: 'Hero Graphic' # Hero Graphic
+    a2442b3f-add5-4d87-97a4-76aa573ea45a: CTA # CTA
     a2754e8b-3bc4-46e8-a8e4-45f15fd7590a: 'Grid 33% Optimisations' # Grid 33% Optimisations
     ab91f872-7263-4250-b647-317386f8f679: 'Organisation Address' # Organisation Address
     abf6793d-9d08-43c6-8d4b-67b7aa893276: 'Quote Source' # Quote Source
@@ -491,18 +531,23 @@ meta:
     b1976587-c4c2-4712-b20f-35026b46a5a7: Target # Target
     baad7fb6-18f2-4914-bc33-e1c48da96896: 'Card Image' # Card Image
     bae060ba-ddb9-4f66-8df8-9055de4e31e5: 'Show Logo' # Show Logo
+    bc069588-fae2-4ec4-8ae6-77528e2aecbb: 'Section Header' # Section Header
     bcca818c-5cb3-4998-8165-95f5c9929f23: Standfirst # Standfirst
     beef2807-f960-414c-9ff2-690d9c30b6a8: Caption # Caption
     c0f07903-c672-4f33-b571-4bf55e084345: Copyright # Copyright
     c0083422-e548-49c9-9db5-a2477942038d: 'Job Role' # Job Role
     c014f72e-6101-4377-a9e4-bbea0f16bce8: Placeholders # Placeholders
+    c5ab6ff5-c916-4b86-9c40-dc91b3b2926d: CTA # CTA
     c5cb9c4f-a101-416a-b253-8c56fb2b215f: Placeholders # Placeholders
+    c5cf4781-2440-4d73-b703-14b5972f3a31: Docs # Docs
+    c18dd467-de1a-4fee-b9b8-51d65c7f27b5: Heading # Heading
     c77ea1bd-e263-4198-b915-5cd6ebf7f78d: 'Grid Items' # Grid Items
     c499bc8d-734b-4fe4-b74e-dca793aba082: 'Body Content' # Body Content
     c2249c59-46a5-435d-ab41-42bb543e2875: City # City
     c5638e5a-a8f8-4f97-ab00-7247cd30b054: Width # Width
     c6379e33-9e45-4b32-a2a0-136084548853: Button # Button
     c57945a1-e622-42d1-ab9a-093940235f29: Quote # Quote
+    c9644189-4157-435a-a889-60c6e6812769: Docs # Docs
     ca8bffb4-dfed-4ca4-b421-ffcc8cca47e2: Target # Target
     cc4d5589-5884-4fb2-ba84-ffb388a8806e: Slides # Slides
     ccc50eb1-1bd2-4306-842a-0a31f567c135: Image # Image
@@ -510,6 +555,7 @@ meta:
     ce64c3ac-ec79-4405-98a9-aea16011e258: Width # Width
     ce437437-2354-47a4-ae70-98fdb69aa175: Version # Version
     ceaca46d-720d-442d-b054-f8fb3704701a: 'Default Placeholder' # Default Placeholder
+    cf635815-1a46-4527-9d6f-f0544d9019bf: Hero # Hero
     d02ca478-f0aa-464c-a032-deb130114e01: Animation # Animation
     d08a0d16-0e00-49e6-9cd4-465fa2d65d7d: Errors # Errors
     d09756bb-3dd5-4ad8-b6eb-6e3595705141: Description # Description
@@ -538,8 +584,10 @@ meta:
     e54a49c9-0078-484d-a129-f32bfc5e09c7: 'Nomenclature of Territorial Units for Statistics' # Nomenclature of Territorial Units for Statistics
     e531a8df-ea73-4e09-8422-d08a20883128: Slides # Slides
     e561deca-d709-4e55-89be-2b9254d635e4: Heading # Heading
+    e664a01c-373d-4a79-8e60-404814e10ff9: Description # Description
     e691301b-7484-40be-a3d4-c3bc590de959: 'Content Builder' # Content Builder
     e999168b-c918-4bb5-817e-a9b72cca830a: 'Grid Content Image - 50%' # Grid Content Image - 50%
+    ea5447b7-30bf-4631-980d-45a642e05f85: Info # Info
     eaf6ce45-a476-4f36-a271-e37b7c767e67: 'Rounded Graphic' # Rounded Graphic
     eb808a1d-0eb6-4d72-8f1a-4eb2ccf1fb93: Callout # Callout
     ebc9bc3a-83e6-4cab-956d-f254a119f606: 'Show Logo' # Show Logo
@@ -569,6 +617,7 @@ meta:
     fc6be63b-f5ea-47c7-9839-cf3289cd1a96: 'Quote Author' # Quote Author
     fd71a6c2-749b-4db5-9f9e-29d0f1766834: 'Started working at Percipio.London' # Started working at Percipio.London
     ff2b4da8-c253-49e7-8258-9a7a0a40d3c7: Swatch # Swatch
+    ffc184cb-849a-4e5d-afc9-25df6955efe8: 'Article Body' # Article Body
 plugins:
   aws-s3:
     enabled: true

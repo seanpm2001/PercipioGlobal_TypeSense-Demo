@@ -1,0 +1,57 @@
+{%- do craft.eagerBeaver.eagerLoadElements(entry,
+    [
+        'docsBuilder',
+        'docsBuilder:snippet'
+    ])
+-%}
+
+{%- minify -%}
+
+    {%- for block in content.docsBuilder.collect().all() -%}
+
+        {%- switch block.type -%}
+
+            {%- case 'article' -%}
+
+                {%- include '_molecules/content/content--article' ignore missing with {
+                    content: block.article,
+                    animate: false
+                } -%}
+
+            {%- case 'code' -%}
+
+                {%- set snippets = block.snippet.collect().all() -%}
+
+                {%- set code = [] -%}
+
+                {%- for snippet in snippets -%}
+                    {%- set code = [{
+                        id: snippet.id,
+                        snippetLang: snippet.snippetLang,
+                        parameters: snippet.parameters,
+                        snippet: snippet.snippet
+                    }]|merge(code) -%}
+                {%- endfor -%}
+
+                <media--code :code="{{- code|reverse|json_encode -}}"></media--code>
+
+            {%- case 'quote' -%}
+
+                {%- include '_molecules/quotes/quote--info' ignore missing with {
+                    content: block.info,
+                    animate: false
+                } -%}
+
+            {%- case 'sectionHeader' -%}
+
+                {%- include '_molecules/content/content--section-header' ignore missing with {
+                    content: block,
+                    headingSize: 'h3',
+                    animate: false
+                } -%}
+
+        {%- endswitch -%}
+
+    {%- endfor -%}
+
+{%- endminify -%}

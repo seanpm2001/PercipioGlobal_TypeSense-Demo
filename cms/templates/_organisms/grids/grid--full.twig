@@ -1,0 +1,45 @@
+{%- import '_macros/atoms' as render -%}
+
+{%- set items = items ??? [] -%}
+{%- set utilities = utilities ??? ''-%}
+
+{%- set classes = {
+    '_default': 'container max-w-screen-xl mx-auto my-12 relative z-10',
+    'grid': 'md:grid grid-cols-2 gap-16 lg:gap-36'
+}-%}
+
+{%- minify -%}
+
+    <section class="overflow-hidden relative {{ utilities -}}">
+        <div class="
+            {{- classes._default }}
+            {{ classes.grid }}
+        ">
+            {%- for item in items -%}
+                {%- if item.gridItem.getType() == 'entry' -%}
+                    {%- include '_molecules/grid-items/grid-item--text' ignore missing with {
+                        item: item.gridItem.getElement()
+                    } -%}
+                {%- else -%}
+                    {%- include '_molecules/grid-items/grid-item--image' ignore missing with {
+                        image: item.gridItem.getElement(),
+                        utilities: 'mt-8 md:mt-0'
+                    } -%}
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+
+        {# background #}
+        <div class="absolute -left-[10vw] top-[10%] blur-xl opacity-40 -scale-x-100 -scale-y-100">
+            <div class="scale-50 origin-bottom-right">
+                {%- include 'svgs/background-pink' -%}
+            </div>
+        </div>
+        <div class="absolute -left-[10vw] top-[10%] blur-xl opacity-40 -scale-x-100 -scale-y-100">
+            <div class="scale-50 origin-bottom-right">
+                {%- include 'svgs/background-blue' -%}
+            </div>
+        </div>
+    </section>
+
+{%- endminify -%}

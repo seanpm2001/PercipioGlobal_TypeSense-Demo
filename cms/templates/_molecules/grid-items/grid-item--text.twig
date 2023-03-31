@@ -1,0 +1,35 @@
+{%- extends '_molecules/grid-items/_grid-item--props' -%}
+{%- import '_macros/atoms' as render -%}
+
+{%- set item = item ??? null -%}
+{%- set utilties = utilties ??? '' -%}
+{%- set size = size ??? 'large' -%}
+
+{%- block grid -%}
+
+    {%- minify -%}
+
+        <article class="flex items-center {{ size == 'large' ? 'py-20' : 'py-10' }} px-10 {{ utilties -}}">
+
+            <div class="w-full">
+                <span class="block h-10">
+                    {%- include 'svgs/' ~ item.icon ~ '.svg' -%}
+                </span>
+
+                <h1 class="pt-6">
+                    {{- render.atom('text', 'h2', {
+                        content: item.title ??? '',
+                        utilities: 'text-white'
+                    }) -}}
+                </h1>
+
+                <div class="pt-6 font-primary text-white text-base">
+                    {{- item.body | typogrify(true) -}}
+                </div>
+            </div>
+
+        </article>
+
+    {%- endminify -%}
+
+{%- endblock -%}

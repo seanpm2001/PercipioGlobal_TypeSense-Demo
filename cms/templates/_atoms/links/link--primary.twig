@@ -1,0 +1,40 @@
+{%- extends '_atoms/links/_link--props' -%}
+
+{#
+    ### PROPERTIES ###
+    ------------------
+
+    INHERITED FROM: `_atoms/links/link--props.twig`
+#}
+
+{%- block link -%}
+
+    {%- set classes = {
+        '_default': 'inline-flex',
+        'font': 'font-primary',
+    }-%}
+
+    {%- minify -%}
+
+        <a
+            {{ props.url ? 'href=' ~ props.url : '' }}
+            data-tag-category="{{- props.ga.category ??? '' -}}"
+            data-tag-action="{{- props.ga.action ??? '' -}}"
+            data-tag-label="{{- props.ga.label ??? '' -}}"
+            data-tag-type="{{- props.ga.type ??? '' -}}"
+            aria-label="{{- props.text -}}"
+            class="{{ classes._default }} {{ classes.font }} {{ props.utilities }}"
+        >
+            <span class="sr-only">
+                {{- props.target == '_self' ? 'Go to: ' : 'Go to external page: ' -}}
+            </span>
+
+            <span>
+                {{- props.text -}}
+            </span>
+
+        </a>
+
+    {%- endminify -%}
+
+{%- endblock -%}

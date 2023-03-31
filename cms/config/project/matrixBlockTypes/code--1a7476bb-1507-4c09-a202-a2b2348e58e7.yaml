@@ -1,0 +1,71 @@
+field: 25a7de28-66b5-4a4d-a909-6c20b7468030 # Docs Builder
+fieldLayouts:
+  73aa6801-71a0-4638-b915-08ad0cea57fb:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 1d8a3729-bec1-490a-ad7c-4fb600dafadb # Snippet
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 425bd69c-7ce1-49ce-a291-f3d8eb0ef4a3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: dabe3e7c-8852-4669-95e5-ece26a70d953
+        userCondition: null
+fields:
+  1d8a3729-bec1-490a-ad7c-4fb600dafadb: # Snippet
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: snippet
+    instructions: null
+    name: Snippet
+    searchable: false
+    settings:
+      blockTypeFields: 0
+      changedFieldIndicator: 373226782
+      columns:
+        __assoc__:
+          -
+            - 55ba42af-57c6-4cf7-b7d1-4096f041f82a # Language
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 969cbd03-a0e7-4b52-a5c1-0f5f7f385ed0 # Parameters
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 459606e4-8323-473c-8c19-4e707051d324 # Snippet
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_101_snippet}}'
+      fieldLayout: matrix
+      maxRows: null
+      minRows: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: null
+      staticField: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: verbb\supertable\fields\SuperTableField
+handle: code
+name: Code
+sortOrder: 3

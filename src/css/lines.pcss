@@ -1,0 +1,50 @@
+/* Gradient background animation */
+.background-gradient-blue {
+    background: rgb(30,41,59);
+    background: linear-gradient(90deg, rgba(50,64,85,1) 0%, rgba(50,64,85,1) 25%, rgba(0,82,255,1) 50%, rgba(50,64,85,1) 75%, rgba(50,64,85,1) 100%);
+}
+
+.background-gradient-pink {
+    background: rgb(30,41,59);
+    background: linear-gradient(90deg, rgba(50,64,85,1) 0%, rgba(50,64,85,1) 25%, rgba(236,72,153,1) 50%, rgba(50,64,85,1) 75%, rgba(50,64,85,1) 100%);
+}
+
+.background-gradient-blue-dark {
+    background: rgb(30,41,59);
+    background: linear-gradient(90deg, rgba(30,41,59,1) 0%, rgba(30,41,59,1) 25%, rgba(0,82,255,1) 50%, rgba(30,41,59,1) 75%, rgba(30,41,59,1) 100%);
+}
+
+.background-gradient-pink-dark {
+    background: rgb(30,41,59);
+    background: linear-gradient(90deg, rgba(30,41,59,1) 0%, rgba(30,41,59,1) 25%, rgba(236,72,153,1) 50%, rgba(30,41,59,1) 75%, rgba(30,41,59,1) 100%);
+}
+
+.background-animate {
+    background-size: 400%;
+
+    -webkit-animation: GradientFade 15s ease infinite;
+    -moz-animation: GradientFade 15s ease infinite;
+    animation: GradientFade 15s ease infinite;
+}
+
+.background-animate-delayed {
+    animation-delay: 1s;
+}
+
+.background-animate-delayed-2 {
+    animation-delay: 2s;
+}
+
+.background-animate-reverse {
+    animation-direction: reverse;
+}
+
+@keyframes GradientFade {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

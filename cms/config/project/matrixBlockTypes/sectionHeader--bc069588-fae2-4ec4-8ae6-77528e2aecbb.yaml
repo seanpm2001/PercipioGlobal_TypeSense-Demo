@@ -1,0 +1,46 @@
+field: 25a7de28-66b5-4a4d-a909-6c20b7468030 # Docs Builder
+fieldLayouts:
+  b12f35eb-fdb2-4d3e-b342-32e99090dd6b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 8d93fcba-dc72-4320-a789-798070e035dd # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ac1865d7-7b3e-49e7-8eaa-fbf7ec9ccc3b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: bafe7ffc-23b8-4376-9478-64730fa25b39
+        userCondition: null
+fields:
+  8d93fcba-dc72-4320-a789-798070e035dd: # Heading
+    columnSuffix: hxyoyjdm
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: 'The full heading of the section header'
+    name: Heading
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: sectionHeader
+name: 'Section Header'
+sortOrder: 1

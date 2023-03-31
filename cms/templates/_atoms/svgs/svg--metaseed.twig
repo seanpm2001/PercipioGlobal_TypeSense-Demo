@@ -1,0 +1,10 @@
+{%- set values = {
+    icon: options.icon ??? null,
+    colour: options.colour ??? 'white'
+} -%}
+
+{%- minify -%}
+    <span class="text-{{- values.colour }} fill-current w-full h-full flex p-4 justify-center">
+        {%- include 'svgs/' ~ values.icon ~ '.svg' -%}
+    </span>
+{%- endminify -%}

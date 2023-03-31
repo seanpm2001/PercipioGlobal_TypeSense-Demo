@@ -1,18 +1,28 @@
-{#
+{%- import '_macros/atoms' as render -%}
 
-    ### COMPONENTS ###
-    ------------------
-
-    ## ATOMS
-
-    header--text: `_molecules/headers/header--text.twig`
-#}
-
-<footer class="py-10 bg-gray-800">
-    {%- include '_molecules/metas/meta--footer' ignore missing -%}
+{%- minify -%}
+<footer id="footer-container" class="lg:mt-30 py-5 relative z-10 container max-w-screen-xl mx-auto md:flex items-center">
+    <p class="font-primary text-sm text-white grow">&copy; {{ 'now' | date('Y') }}. Craft Typesense is owned by 
+        {{- render.atom('link', 'primary', {
+            ga: {
+                category: 'navigation',
+                action: 'click',
+                label: 'Percipio Global Ltd',
+                type: 'footer'
+            },
+            text: 'Percipio Global Ltd',
+            url: 'http://percipio.london',
+            utilities: 'text-sm text-white'
+        }) -}}.
+    </p>
 
     {%- include '_organisms/navigations/navigation--social' ignore missing with {
-        utilities: 'py-3 flex items-center justify-center'
+        utilities: 'md:pl-4 space-x-4 flex mt-4 md:mt-0'
     } -%}
 
 </footer>
+{%- endminify -%}
+
+{% block bodyJs %}
+    {{ craft.vite.script("src/js/modules/footer.ts", true) }}
+{% endblock bodyJs %}

@@ -1,0 +1,42 @@
+{%- import '_macros/atoms' as render -%}
+
+{%- set items = items ??? [] -%}
+{%- set utilities = utilities ??? ''-%}
+
+{%- set classes = {
+    '_default': 'container max-w-screen-xl mx-auto my-12 relative',
+    'grid': 'md:grid grid-cols-2 gap-4',
+}-%}
+
+{%- minify -%}
+
+    <section class="overflow-hidden {{ utilities -}}">
+        <div class="
+            {{- classes._default }}
+            {{ classes.grid }}
+        ">
+            {%- for item in items -%}
+
+                <div class="w-full rounded-xl backdrop-blur-sm bg-slate-600/25 border border-slate-700 relative mb-4 md:mb-0">
+                    <line--top :delayed="{{- loop.index % 2 == 0 ? 'true' : 'false' -}}"></line--top>
+                    <line--bottom color="pink" :delayed="{{- loop.index % 2 == 0 ? 'true' : 'false' -}}"></line--bottom>
+
+                    {%- if item.gridItem.getType() == 'entry' -%}
+                        {%- include '_molecules/grid-items/grid-item--text' ignore missing with {
+                            item: item.gridItem.getElement()
+                        } -%}
+                    {%- else -%}
+                        {%- include '_molecules/grid-items/grid-item--image-small' ignore missing with {
+                            image: item.gridItem.getElement(),
+                            utilities: 'mt-8 md:mt-0'
+                        } -%}
+                    {%- endif -%}
+                </div>
+
+            {%- endfor -%}
+
+        </div>
+
+    </section>
+
+{%- endminify -%}

@@ -1,0 +1,31 @@
+{%- extends '_molecules/grid-items/_grid-item--props' -%}
+{%- import '_macros/atoms' as render -%}
+
+{%- set image = image ??? null -%}
+{%- set size = size ??? 'large' -%}
+{%- set utilities = utilities ??? '' -%}
+
+{%- block grid -%}
+
+    {%- minify -%}
+
+        <article class="flex items-end h-full px-10 overflow-hidden {{ utilities -}}">
+
+            <div class="w-full pt-10">
+
+                {{- render.atom('image', 'article', {
+                    image: image,
+                    sizes: ['50vw', '100vw'],
+                    alt: image.title,
+                    placeholders: placeholders,
+                    utilities: 'w-full',
+                    parentUtilities: 'w-full shadow-2xl shadow-slate-400/50'
+                }) -}}
+
+            </div>
+            
+        </article>
+
+    {%- endminify -%}
+
+{%- endblock -%}

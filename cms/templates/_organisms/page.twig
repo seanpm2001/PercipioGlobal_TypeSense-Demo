@@ -6,59 +6,49 @@
 
     ## ORGANISMS
 
-    view--detail-blog: `_organisms/views/view--detail-blog`
-    view--detail-projects: `_organisms/views/view--detail-projects`
-    view--detail-services: `_organisms/views/view--detail-services`
-    view--detail-team: `_organisms/views/view--detail-team`
-    view--detail-vacancies: `_organisms/views/view--detail-vacancies`
-    view--overview-blog: `_organisms/views/view--overview-blog.twig`
-    view--overview-projects: `_organisms/views/view--overview-projects.twig`
-    view--overview-services: `_organisms/views/view--overview-services.twig`
-    view--overview-team: `_organisms/views/view--overview-team.twig`
-    view--overview-plugins: `_organisms/views/view--overview-plugins.twig`
-    view--overview-vacancies: `_organisms/views/view--overview-vacancies.twig`
-    view--page-contact: `_organisms/views/view--page-contact`
-    view--page-content: `_organisms/views/view--page-content`
     view--page-home: `_organisms/views/view--page-home`
-    view--page-landing: `_organisms/views/view--page-landing`
 #}
 
 {% block headLinks %}
     {{ parent() }}
 {% endblock headLinks %}
 
-{%- set component = null -%}
+{%- set component = '_organisms/views/view--page-landing' -%}
 
 {% block content %}
 
-    {%- if entry ??? null %}
+    <div class="z-10 relative">
+        {%- if entry ??? null %}
 
-        {%- switch entry.type -%}
-            {%- case 'contentPage' -%}
-                {%- set component = '_organisms/views/view--page-content' -%}
+            {%- switch entry.type -%}
 
-            {%- case 'homepage' -%}
-                {%- set component = '_organisms/views/view--page-home' -%}
+                {%- case 'contentPage' -%}
+                    {%- set component = '_organisms/views/view--page-content' -%}
 
-            {%- case 'landingPage' -%}
-                {%- set component = '_organisms/views/view--page-landing' -%}
+                {%- case 'docs' -%}
+                    {%- set component = '_organisms/views/view--page-docs' -%}
 
-            {%- case 'demoPage' -%}
-                {%- set component = '_organisms/views/view--page-demo' -%}
+                {%- case 'demoPage' -%}
+                    {%- set component = '_organisms/views/view--page-demo' -%}
 
-        {%- endswitch -%}
+            {%- endswitch -%}
 
-        {%- if component -%}
-            {%- include component ignore missing with {
-                content: entry,
-            } -%}
+            {%- if component -%}
+                {%- include component ignore missing with {
+                    content: entry,
+                } -%}
+            {%- endif -%}
+
         {%- endif -%}
-
-    {%- endif -%}
+    </div>
+    
+    {# {%- if entry.showLinesFooter ??? null -%}
+        <lines--horizontal></lines--horizontal>
+    {%- endif -%} #}
 
 {% endblock %}
 
 {# -- Any JavaScript that should be included before </body> -- #}
 {% block bodyJs %}
-    {{ parent() }}
+    {# {{ craft.vite.script("src/js/modules/navigation.ts", true) }} #}
 {% endblock bodyJs %}

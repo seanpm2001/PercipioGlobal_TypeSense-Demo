@@ -1,0 +1,244 @@
+changedFieldIndicator: 686579930
+field: 1d8a3729-bec1-490a-ad7c-4fb600dafadb # Snippet
+fieldLayouts:
+  05ed4ba3-a6df-4754-bcfb-8e6b868611db:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 55ba42af-57c6-4cf7-b7d1-4096f041f82a # Language
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ce61122e-e378-41ed-835d-6ebccc4efd15
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 969cbd03-a0e7-4b52-a5c1-0f5f7f385ed0 # Parameters
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7c8c8ca7-6d2a-4195-9c8e-4cc5a6394a89
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 459606e4-8323-473c-8c19-4e707051d324 # Snippet
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0be15a8f-009c-47e5-a553-e5105adea021
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 773a18dd-4588-4676-86bf-576ab7b69891
+        userCondition: null
+fields:
+  55ba42af-57c6-4cf7-b7d1-4096f041f82a: # Language
+    columnSuffix: hlsxaeau
+    contentColumnType: string
+    fieldGroup: null
+    handle: snippetLang
+    instructions: null
+    name: Language
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Markdown
+            -
+              - value
+              - markdown
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - CSS
+            -
+              - value
+              - css
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - JavaScript
+            -
+              - value
+              - javascript
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bash
+            -
+              - value
+              - bash
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - GraphQL
+            -
+              - value
+              - graphql
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - HTTP
+            -
+              - value
+              - http
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - JSON
+            -
+              - value
+              - json
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PHP
+            -
+              - value
+              - php
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - SQL
+            -
+              - value
+              - sql
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Twig
+            -
+              - value
+              - twig
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - YAML
+            -
+              - value
+              - yaml
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Dockerfile
+            -
+              - value
+              - dockerfile
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Environment
+            -
+              - value
+              - environment
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  969cbd03-a0e7-4b52-a5c1-0f5f7f385ed0: # Parameters
+    columnSuffix: hyqxmqiu
+    contentColumnType: text
+    fieldGroup: null
+    handle: parameters
+    instructions: null
+    name: Parameters
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  459606e4-8323-473c-8c19-4e707051d324: # Snippet
+    columnSuffix: ylwrtokn
+    contentColumnType: text
+    fieldGroup: null
+    handle: snippet
+    instructions: null
+    name: Snippet
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: true
+      columnType: null
+      initialRows: 4
+      multiline: true
+      placeholder: null
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
