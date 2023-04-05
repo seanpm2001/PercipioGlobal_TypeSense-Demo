@@ -30,7 +30,7 @@ fields:
     name: 'Body Content'
     searchable: true
     settings:
-      availableTransforms: '*'
+      availableTransforms: ''
       availableVolumes: ''
       columnType: text
       configSelectionMode: choose
@@ -51,4 +51,4 @@ fields:
     type: craft\redactor\Field
 handle: article
 name: 'Article Body'
-sortOrder: 3
+sortOrder: 2

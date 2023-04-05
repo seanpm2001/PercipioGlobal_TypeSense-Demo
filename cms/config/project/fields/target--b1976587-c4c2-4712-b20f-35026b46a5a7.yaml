@@ -24,8 +24,9 @@ settings:
         - class
         - craft\elements\conditions\entries\EntryCondition
   selectionLabel: 'Add an entry'
-  showSiteMenu: false
+  showSiteMenu: true
   sources:
+    - 'section:c9644189-4157-435a-a889-60c6e6812769' # Docs
     - 'section:ef841ba4-7bcd-4ef5-9c12-96377bf7fba2' # Pages
   targetSiteId: null
   validateRelatedElements: true

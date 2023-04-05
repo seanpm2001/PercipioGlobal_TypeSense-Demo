@@ -1,4 +1,4 @@
-dateModified: 1680263899
+dateModified: 1680681597
 elementSources:
   craft\elements\Entry:
     -
@@ -296,7 +296,6 @@ meta:
     2cb6fb1e-761a-4096-ba9d-e151495efc98: Caption # Caption
     2dd56883-3aaa-4d1b-85a9-a62fd192ff43: 'Highlight Cards' # Highlight Cards
     2f24b64b-245c-4788-9a05-af55af440b22: Longitude # Longitude
-    3a030d4d-66bf-4bff-af6b-a3366b617b7e: 'Image Gallery' # Image Gallery
     3a3a038a-b887-45f4-8850-96f3b78060f2: Width # Width
     3d10daf6-be5c-4949-b93d-78a24883ef55: Longitude # Longitude
     3ef3485e-6187-4dac-af6b-66d630852b61: Quote # Quote
@@ -349,12 +348,10 @@ meta:
     10bd70ab-fb15-4522-a40e-e59b82bb493d: County # County
     11cd00ae-7392-488f-b7d5-f0116379c7ed: Employees # Employees
     13d83534-d33c-4c02-8e9a-8214c5419071: 'Landing Page' # Landing Page
-    014b68dd-cb2e-4a34-a2b4-91eba4de1e16: Code # Code
     17a904c0-8155-41ee-bcd8-915ad0b0bc70: Region # Region
     020d5ff3-f24f-48ae-bd4c-ad2beb6b4d8b: Heading # Heading
     24fd51e7-3c4a-4991-89c1-290d5c79408c: 'Logo Position' # Logo Position
     25a7de28-66b5-4a4d-a909-6c20b7468030: 'Docs Builder' # Docs Builder
-    28eeceba-0a90-4920-85a2-1bc8eb49f094: 'Grid Content Image - 50% background' # Grid Content Image - 50% background
     29d259da-2846-455c-b5ab-ed43e74ae7fa: 'Text Size' # Text Size
     31c5270d-1393-4081-ac23-419af7b7b991: Button # Button
     32d5ec8b-e9ee-4409-ba69-616e0502bf3a: Overline # Overline
@@ -364,7 +361,6 @@ meta:
     040f68f0-b32f-4544-8b97-56d71c7f3428: Ratio # Ratio
     46d6543c-b83e-4b73-be6e-edcfb691204e: 'Grid Items' # Grid Items
     46faf86d-bfa5-4356-bef1-0af3b2a87332: 'Secondary Navigation' # Secondary Navigation
-    47c98ad7-c9a9-402c-9171-9fd14eb7e8f4: 'Highlight Cards' # Highlight Cards
     48f153ba-ba26-42dd-b297-c5b428cc259b: Image # Image
     49d732ef-0bfc-46c0-ba09-004de008c0ba: Ratio # Ratio
     49fc2634-bf3b-4e3e-a1bc-9eeb199fac80: 'Social Media URL' # Social Media URL
@@ -415,7 +411,6 @@ meta:
     0345c44d-88e4-4280-842b-158ec0307b5a: Background # Background
     345c4093-df0a-45dd-9d5f-47fb3fac8c7d: Heading # Heading
     346cce90-1d6e-4c2d-82c0-c91b571c741c: 'Section Header' # Section Header
-    385a49df-e957-49d6-b921-68d76f6f9e57: 'Grid Content' # Grid Content
     557aea75-e34b-4fff-83c6-c67a95ce8bec: 'Large Cards Optimisation' # Large Cards Optimisation
     633b1b96-cdb8-4c97-a045-aa63d306b41c: Language # Language
     643cffa6-e745-4f11-a03c-e83dbba19d24: Swatch # Swatch
@@ -443,12 +438,10 @@ meta:
     5926ab26-ed13-4347-80c3-1fbfcd1db6f4: Town # Town
     6131b812-b367-4709-b662-f333b059d3dc: Image # Image
     6325f925-feea-4e28-b6ec-7630d3e70cc8: Embed # Embed
-    6398bf72-eab8-49ad-8949-2dfd557210c8: 'Grid Content Info' # Grid Content Info
     6652c1d5-4d7e-4102-b0d0-7c6133609c09: 'Local Authority' # Local Authority
     6776ad6d-4fab-4c6f-a948-20e376cc6820: Button # Button
     7094bca5-b1bf-4bdd-8699-baa53877dc85: Heading # Heading
     7127ef72-a077-470d-8d8d-96b29a40a27a: 'Logo Position' # Logo Position
-    8242f176-ff64-4969-8ece-037c27beea0a: Standfirst # Standfirst
     8411ab0f-47f3-4c38-ad3b-f449f6bfe1f5: 'Small Gallery Optimisation' # Small Gallery Optimisation
     9151f126-34cf-4f3a-960f-107acc9842ad: Heading # Heading
     9475b42a-7657-4e3f-9d5b-1e1b5a1732ca: Swatch # Swatch
@@ -460,7 +453,6 @@ meta:
     34000b23-2325-400f-a43f-958941335fe3: 'Project Categories' # Project Categories
     35981b2e-d04e-4366-939a-c0673263711a: Questions # Questions
     45539eda-7272-4a6b-b4a2-2b629a2742ec: Caption # Caption
-    60380d2b-c803-4fab-8aed-752e3268b5f5: 'Grid Content Image - 33%' # Grid Content Image - 33%
     62060b0e-9ae6-4b5a-a779-469967724b21: 'Large Gallery Optimisation' # Large Gallery Optimisation
     73929e5d-0eaa-424c-8cd1-ce83b47fd733: 'Page Builder' # Page Builder
     82486ff8-8d32-4b90-9828-8a12d879b242: Schools # Schools
@@ -492,8 +484,6 @@ meta:
     a5cb77be-c4d9-4d3e-88fb-d5384ca13941: 'Error Image' # Error Image
     a6d05f0a-f046-4a8d-bddd-dd368b675507: Content # Content
     a9ba876e-c0bf-4a8c-b77e-e926de382189: Items # Items
-    a23c9a51-65d8-446d-b01a-222c2403d805: Media # Media
-    a57c1d51-171d-47c2-ac77-cbc30d2229f3: 'Content CTA' # Content CTA
     a81ab3c0-c52b-4817-8820-c0e69e9a0d2d: Containerise # Containerise
     a938d5bd-b3b8-48ed-b083-099f57f60c16: 'Hero Graphic' # Hero Graphic
     a1477b0f-3339-4cae-8768-625b7fe98d6a: 'Hero Graphic' # Hero Graphic
@@ -570,7 +560,6 @@ meta:
     d7413814-0c30-451d-a383-d39d7cc3f78b: Position # Position
     db91cdbf-486a-4cbd-a24e-fac4e2327a50: 'Plugin Icon' # Plugin Icon
     dbc7a062-ef19-48ca-bd6f-acda62a18b78: 'Hero Builder' # Hero Builder
-    de0ad924-50fa-43fc-9790-e44bf330cdd2: Quotation # Quotation
     df8a0480-96ec-4e76-bc8f-16b5e4f2fa3b: Heading # Heading
     dffe2f47-18b7-4dcb-845d-2d88fa0378c3: 'Organisational Information' # Organisational Information
     e0eb66ab-e5e9-4342-9c73-f3034283641e: Overline # Overline
@@ -586,7 +575,6 @@ meta:
     e561deca-d709-4e55-89be-2b9254d635e4: Heading # Heading
     e664a01c-373d-4a79-8e60-404814e10ff9: Description # Description
     e691301b-7484-40be-a3d4-c3bc590de959: 'Content Builder' # Content Builder
-    e999168b-c918-4bb5-817e-a9b72cca830a: 'Grid Content Image - 50%' # Grid Content Image - 50%
     ea5447b7-30bf-4631-980d-45a642e05f85: Info # Info
     eaf6ce45-a476-4f36-a271-e37b7c767e67: 'Rounded Graphic' # Rounded Graphic
     eb808a1d-0eb6-4d72-8f1a-4eb2ccf1fb93: Callout # Callout

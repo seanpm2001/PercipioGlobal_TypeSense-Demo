@@ -20,7 +20,7 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: _organisms/page.twig
-    uriFormat: 'docs/{parent.uri ?? parent.uri}/{slug}'
+    uriFormat: '{parent.level == 1 ? ''docs'' : parent.uri ?? parent.uri}/{slug}'
 structure:
   maxLevels: 2
   uid: 4600a75e-a9bd-4b27-96e1-4d489f22baa5

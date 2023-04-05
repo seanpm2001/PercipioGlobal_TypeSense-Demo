@@ -44,13 +44,13 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 73929e5d-0eaa-424c-8cd1-ce83b47fd733 # Page Builder
+            fieldUid: e691301b-7484-40be-a3d4-c3bc590de959 # Content Builder
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5e709c8a-f425-4269-9021-1350194f303c
+            uid: ee20a865-20d4-484e-8198-270817433a1a
             userCondition: null
             warning: null
             width: 100

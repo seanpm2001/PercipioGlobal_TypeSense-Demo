@@ -12,68 +12,20 @@
 
     {%- for block in content.pageBuilder.collect().all() -%}
 
-        {%- set prev = block.getPrev().type ??? '' -%}
-        {%- set next = block.getNext().type ??? '' -%}
-
         {%- switch block.type -%}
-                
-            {%- case 'galleryImages' -%}
 
-                {%- include '_organisms/grids/grid--gallery' ignore missing with {
-                    images: block.images,
+            {%- case 'article' -%}
+
+                {%- include '_molecules/content/content--article' ignore missing with {
+                    content: block.article,
                     utilities: 'mb-10 lg:mb-20'
                 } -%}
 
-            {%- case 'grid' -%}
-
-                {%- switch block.gridType -%}
-                    {%- case 'fullWidth' -%}
-                        {%- include '_organisms/grids/grid--full' ignore missing with {
-                            items: block.gridItems.collect().all() ??? []
-                        } -%}
-                    
-                    {%- case 'half' -%}
-                        {%- include '_organisms/grids/grid--half' ignore missing with {
-                            items: block.gridItems.collect().all() ??? []
-                        } -%}
-                    
-                    {%- case 'shortLong' -%}
-                        {%- include '_organisms/grids/grid--alternating' ignore missing with {
-                            items: block.gridItems.collect().all() ??? []
-                        } -%}
-                {%- endswitch -%}
-
-            {%- case 'highlightCards' -%}
-
-                {%- include '_organisms/cards/cards--highlight' ignore missing with {
-                    cards: block.cards.collect().all() ??? null,
-                    utilities: 'mb-10 lg:mb-20'
-                } -%}
-                
             {%- case 'sectionHeader' -%}
 
                 {%- include '_molecules/content/content--section-header' ignore missing with {
                     content: block,
                     utilities: 'mb-10 lg:mb-20'
-                } -%}
-
-            {%- case "spotlightCards" -%}
-
-                {%- include '_organisms/cards/cards--spotlight' ignore missing with {
-                    cards: block.cards,
-                    category: block.filter ??? null,
-                    limit: block.limit ??? null,
-                    utilities: 'mb-10 lg:mb-20'
-                } -%}
-
-            {%- case 'callToAction' -%}
-
-                {%- set cta = block.cta.collect().one() ??? null -%}
-
-                {%- include '_organisms/ctas/cta--primary' with {
-                    heading: cta.title ??? '',
-                    content: cta.description ??? '',
-                    button: cta.target.collect().one() ??? null
                 } -%}
 
         {%- endswitch -%}

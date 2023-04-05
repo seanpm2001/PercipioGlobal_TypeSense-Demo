@@ -4,7 +4,7 @@
 {%- block image -%}
     {%- minify -%}
         {%- if props.image -%}
-            <section class="container max-w-[84ch] mx-auto pb-8 {{ props.utilities -}}">
+            <section class="container max-w-[80ch] mx-auto px-0 pb-8 {{ props.utilities -}}">
                 <div class="animate" data-animation="fadeIn">
                     {{- render.atom('image', 'article', {
                             image: props.image,

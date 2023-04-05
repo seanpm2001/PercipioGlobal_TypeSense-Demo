@@ -34,6 +34,12 @@
                         utilities: 'mb-10 lg:mb-20'
                     } -%}
 
+                {%- case "singleImage" -%}
+
+                    {%- include '_molecules/images/image--article' ignore missing with {
+                        image: block.image.collect().one(),
+                    } -%}
+
             {%- endswitch -%}
 
         {%- endfor -%}
