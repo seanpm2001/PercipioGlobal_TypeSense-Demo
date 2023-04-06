@@ -140,13 +140,13 @@
   trigger_mode: "ON_EVERY_PUSH"
   ref_name: "production"
   ref_type: "BRANCH"
-  target_site_url: "https://CHANGEME.com/"
+  target_site_url: "https://typesense.percipio.london/"
   trigger_condition: "ALWAYS"
   actions:
-    - action: "Execute: webpack build"
+    - action: "Execute: vite build"
       type: "BUILD"
       working_directory: "/buddy/$PROJECT_SHORTNAME"
-docker_image_name: "nystudio107/node-dev-base"
+      docker_image_name: "nystudio107/node-dev-base"
       docker_image_tag: "12-alpine"
       execute_commands:
         - "cd buildchain"
