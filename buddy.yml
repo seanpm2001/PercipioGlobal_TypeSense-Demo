@@ -116,7 +116,7 @@
       channel: "C015P48A8KT"
       channel_name: "dev-releases"
       trigger_condition: "ALWAYS"
-      integration_hash: "$INTEGRATION_HASH"
+      integration_hash: "5df89776aab2cb21934805aa"
     - action: "Send failure to dev-releases channel"
       type: "SLACK"
       trigger_time: "ON_FAILURE"
@@ -125,7 +125,7 @@
       channel: "C015P48A8KT"
       channel_name: "dev-releases"
       trigger_condition: "ALWAYS"
-      integration_hash: "$INTEGRATION_HASH"
+      integration_hash: "5df89776aab2cb21934805aa"
   variables:
     - key: "PROJECT_SHORTNAME"
       value: "typesense-demo"
@@ -137,5 +137,3 @@
       value: "178.128.162.69"
     - key: "REMOTE_SSH_USER"
       value: "forge"
-    - key: "INTEGRATION_HASH"
-      value: "5df89776aab2cb21934805aa"
