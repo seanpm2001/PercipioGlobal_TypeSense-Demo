@@ -107,7 +107,7 @@ onMounted(async() => {
                             checkActive(nav1.slug)
                         ]"
                     >
-                        {{ nav1.title}}
+                        {{ nav1.title }}
                     </span>
 
                     <ul 
