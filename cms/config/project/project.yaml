@@ -1,4 +1,4 @@
-dateModified: 1680681597
+dateModified: 1681472217
 elementSources:
   craft\elements\Entry:
     -
@@ -746,7 +746,7 @@ plugins:
   feed-me:
     edition: standard
     enabled: true
-    schemaVersion: 4.4.0
+    schemaVersion: 5.1.0.0
   fix-fks:
     edition: standard
     enabled: true
@@ -760,6 +760,7 @@ plugins:
       allowUpScaledImageVariants: true
       assetVolumeSubFolders: true
       autoSharpenScaledImages: true
+      capSilhouetteSvgSize: true
       createColorPalette: true
       createPlaceholderSilhouettes: false
       imageTransformTypeSettings:
@@ -777,6 +778,9 @@ plugins:
                 -
                   - securityToken
                   - ''
+                -
+                  - unsharpMask
+                  - '20'
           -
             - nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform
             -
@@ -798,6 +802,7 @@ plugins:
                   - includeBucketPrefix
                   - ''
       lowerQualityRetinaImageVariants: false
+      sharpenScaledImagePercentage: 50
       transformClass: nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform
   mailgun:
     edition: standard
