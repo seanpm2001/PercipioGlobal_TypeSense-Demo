@@ -9,26 +9,16 @@ export interface SearchParameters {
 export const useTypesenseClient = (protocol = 'https', port = 443): any => {
     return new Typesense.Client({
         'nearestNode': {
-            'host': 'jsw6qlvdby0p49z5p.a1.typesense.net',
+            'host': 'oks5vwyc206ql3ijp-1.a1.typesense.net',
             'port': port,
             'protocol': protocol,
         },
         'nodes': [
             {
-                'host': 'jsw6qlvdby0p49z5p-1.a1.typesense.net',
+                'host': 'oks5vwyc206ql3ijp-1.a1.typesense.net',
                 'port': port,
                 'protocol': protocol,
-            },
-            {
-                'host': 'jsw6qlvdby0p49z5p-2.a1.typesense.net',
-                'port': port,
-                'protocol': protocol,
-            },
-            {
-                'host': 'jsw6qlvdby0p49z5p-3.a1.typesense.net',
-                'port': port,
-                'protocol': protocol,
-            },
+            }
         ],
         'apiKey': 'brJutbUUNMesXVebvDVWQd0wIaGbzpDg',
         'connectionTimeoutSeconds': 2
