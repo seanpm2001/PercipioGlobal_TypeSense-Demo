@@ -20,7 +20,7 @@ export const useTypesenseClient = (protocol = 'https', port = 443): any => {
                 'protocol': protocol,
             }
         ],
-        'apiKey': 'brJutbUUNMesXVebvDVWQd0wIaGbzpDg',
+        'apiKey': 'VuI2EkjLW7xAle6sRWBUGcYDVZjsMugD',
         'connectionTimeoutSeconds': 2
     })
 }
